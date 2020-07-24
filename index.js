@@ -7,10 +7,10 @@ bot.on('ready', () =>{
 })
 
 bot.on('message', msg=>{
-    if(msg.content === "HELLO"){
+    if(msg.content === "HELLO"||"hello"){
         msg.reply('HELLO FRIEND');
     }
-    if(msg.content === "Bye"){
+    if(msg.content === "Bye"||"bye"){
         msg.reply('Bye');
     }
 })
