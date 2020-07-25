@@ -11,7 +11,10 @@ bot.on('message', msg=>{
         msg.reply('HELLO FRIEND');
     }
     if(msg.content === "Bye"){
-        msg.reply('Bye');
+        msg.reply('bye');
+    }
+    if(msg.content === "Adharsh"){
+        msg.reply('He is DEAD');
     }
 })
 
