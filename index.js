@@ -16,6 +16,9 @@ bot.on('message', msg=>{
     if(msg.content === "Adharsh"){
         msg.reply('He is DEAD');
     }
+    if(msg.content === "John"){
+        msg.reply('He is DEAD');
+    }
 })
 
 bot.login(process.env.token);
