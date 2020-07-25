@@ -16,8 +16,8 @@ bot.on('message', msg=>{
     if(msg.content === "Adharsh"){
         msg.reply('He is DEAD');
     }
-    if(msg.content === "John"){
-        msg.reply('He is DEAD');
+    if(msg.content === "Who is your master bot"){
+        msg.reply('Isra is my master');
     }
 })
 
