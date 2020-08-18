@@ -11,7 +11,7 @@ bot.on('message', msg=>{
         msg.reply('HELLO FRIEND');
     }
     if(msg.content === "Bye"){
-        msg.reply('bye');
+        msg.reply('bye , But my master(isra) will be online 24/7');
     }
     if(msg.content === "Adharsh"){
         msg.reply('He is DEAD');
