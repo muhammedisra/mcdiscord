@@ -7,7 +7,7 @@ bot.on('ready', () =>{
 })
 
 bot.on('message', msg=>{
-    if(msg.content === shift().toUpperCase("HELLO")){
+    if(msg.content === toUpperCase("HELLO")){
         msg.reply('HELLO FRIEND');
     }
     if(msg.content === "Bye"){
