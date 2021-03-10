@@ -31,6 +31,6 @@ bot.on('message', msg=>{
     if(msg.content.toLowerCase() === "date"){
         msg.channel.send(date);
 
-})
+}})
 
 bot.login(process.env.token);
