@@ -20,8 +20,8 @@ bot.on('message', msg=>{
         msg.reply('Isra is my master');
     }
     if (msg.content === "random") { // checks if the message says "?random"
-        const number = Math.random(); // generates a random number
-        msg.channel.send(number*1000); // sends a message to the channel with the number
+        const number = Math.random()*10000; // generates a random number
+        msg.channel.send(number.toString().substring(4)); // sends a message to the channel with the number
     }
 })
 
