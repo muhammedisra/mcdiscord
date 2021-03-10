@@ -20,14 +20,16 @@ bot.on('message', msg=>{
         msg.reply('Isra is my master');
     }
     if (msg.content === "random") { // checks if the message says "?random"
-            // Send time
-            let date = new Date().toLocaleString('en-US', {
-                timeZone: 'Asia/Calcutta'
-              });
-            msg.channel.send(date);
         const number = Math.random()*10000; // generates a random number
         msg.channel.send(number.toString().substring(0,4)); // sends a message to the channel with the number
     }
+    if(msg.content === "time"){
+        let date = new Date().toLocaleString('en-US', {
+        timeZone: 'Asia/Calcutta'
+        });
+        msg.channel.send(date);
+    }
+
 })
 
 bot.login(process.env.token);
