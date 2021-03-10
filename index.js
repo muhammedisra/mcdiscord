@@ -20,6 +20,10 @@ bot.on('message', msg=>{
         msg.reply('Isra is my master');
     }
     if (msg.content === "random") { // checks if the message says "?random"
+    let date = new Date();
+            // Send date
+            let content = date.getDate() + '/' + date.getMonth() + '/' + date.getFullYear();
+            msg.channel.send(content)
         const number = Math.random()*10000; // generates a random number
         msg.channel.send(number.toString().substring(0,4)); // sends a message to the channel with the number
     }
