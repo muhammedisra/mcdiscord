@@ -24,11 +24,11 @@ bot.on('message', msg=>{
         msg.channel.send(number.toString().substring(0,4)); // sends a message to the channel with the number
     }
     if(msg.content.toLowerCase() === "time"){
-        let date = new Date().toLocaleDateString('en-IN', {timeZone: 'Asia/Calcutta'});
+        let time = new Date().toLocaleTimeString('en-IN', {timeZone: 'Asia/Calcutta'});
         msg.channel.send(time);
     }
     if(msg.content.toLowerCase() === "date"){
-        let time = new Date().toLocaleTimeString('en-IN', {timeZone: 'Asia/Calcutta'});
+        let Date = new Date().toLocaleDateString('en-IN', {timeZone: 'Asia/Calcutta'});
         msg.channel.send(date);
     }
 })
