@@ -28,7 +28,7 @@ bot.on('message', msg=>{
         msg.channel.send(time);
     }
     if(msg.content.toLowerCase() === "date"){
-        let Date = new Date().toLocaleDateString('en-IN', {timeZone: 'Asia/Calcutta'});
+        let date = new Date().toLocaleDateString('en-IN', {timeZone: 'Asia/Calcutta'});
         msg.channel.send(date);
     }
 })
