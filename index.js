@@ -12,7 +12,7 @@ bot.on('message', msg=>{
     if(msg.content.toUpperCase() === "HELLO"){
         msg.reply('HELLO FRIEND');
     }
-    if(msg.content === "Bye"){
+    if(msg.content.toLowerCase() === "bye"){
         msg.reply('bye , But my master(isra) will be online 24/7');
     }
     if(msg.content === "Adharsh"){
@@ -21,13 +21,15 @@ bot.on('message', msg=>{
     if(msg.content === "Who is your master bot"){
         msg.reply('Isra is my master');
     }
-    if (msg.content === "random") { // checks if the message says "?random"
+    if (msg.content.toLowerCase() === "random") { // checks if the message says "?random"
         const number = Math.random()*10000; // generates a random number
         msg.channel.send(number.toString().substring(0,4)); // sends a message to the channel with the number
     }
-    if(msg.content === "time"){
-        msg.channel.send(date);
+    if(msg.content.toLowerCase() === "time"){
+        msg.channel.send(time);
     }
+    if(msg.content.toLowerCase() === "date"){
+        msg.channel.send(date);
 
 })
 
