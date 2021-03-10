@@ -32,8 +32,8 @@ bot.on('message', msg=>{
         msg.channel.send(date);
     }
     if (msg.content.toLowerCase() === 'avatar') {
-        if (!message.mentions.users.size) {
-            return message.channel.send(`Your avatar: <${message.author.displayAvatarURL({ format: "png", dynamic: true })}>`);
+        if (!msg.mentions.users.size) {
+            return msg.channel.send(`Your avatar: <${msg.author.displayAvatarURL({ format: "png", dynamic: true })}>`);
         }
 }
 })
