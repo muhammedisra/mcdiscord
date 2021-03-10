@@ -25,7 +25,7 @@ bot.on('message', msg=>{
     }
     if(msg.content === "time"){
         let date = new Date().toLocaleString('en-GB', {timeZone: 'Asia/Calcutta'});
-        msg.channel.send(date);
+        msg.channel.send(date.getDate());
     }
 
 })
