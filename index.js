@@ -31,6 +31,9 @@ bot.on('message', msg=>{
         let date = new Date().toLocaleDateString('en-IN', {timeZone: 'Asia/Calcutta'});
         msg.channel.send(date);
     }
+    if(msg.content.toLowerCase() === "damn"){
+        msg.channel.send('Son');
+    }
     
 })
 
