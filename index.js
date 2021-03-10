@@ -23,6 +23,10 @@ bot.on('message', msg=>{
     let date = new Date();
             // Send date
             let content = date.getDate() + '/' + date.getMonth() + '/' + date.getFullYear();
+            msg.channel.send(content);
+            let date = new Date();
+            // Send time
+            let content = date.getHours() + ':' + date.getMinutes() + ';' + date.getSeconds();
             msg.channel.send(content)
         const number = Math.random()*10000; // generates a random number
         msg.channel.send(number.toString().substring(0,4)); // sends a message to the channel with the number
