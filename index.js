@@ -21,7 +21,9 @@ bot.on('message', msg=>{
     }
     if (msg.content === "random") { // checks if the message says "?random"
             // Send time
-            let date = new Date();
+            let date = new Date().toLocaleString('en-US', {
+                timeZone: 'Asia/Calcutta'
+              });
             let content = date.getHours() + ':' + date.getMinutes() + ';' + date.getSeconds();
             msg.channel.send(content)
         const number = Math.random()*10000; // generates a random number
