@@ -1,5 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+let date = new Date().toLocaleDateString('en-IN', {timeZone: 'Asia/Calcutta'});
+let time = new Date().toLocaleTimeString('en-IN', {timeZone: 'Asia/Calcutta'});
 
 
 bot.on('ready', () =>{
@@ -24,7 +26,6 @@ bot.on('message', msg=>{
         msg.channel.send(number.toString().substring(0,4)); // sends a message to the channel with the number
     }
     if(msg.content === "time"){
-        let date = new Date().toLocaleDateString('en-IN', {timeZone: 'Asia/Calcutta'});
         msg.channel.send(date);
     }
 
