@@ -34,6 +34,8 @@ bot.on('message', msg=>{
     if (msg.content.toLowerCase() === 'avatar') {
         if (!msg.mentions.users.size) {
             return msg.channel.send(`Your avatar: <${msg.author.displayAvatarURL({ format: "png", dynamic: true })}>`);
+            const attachment = new MessageAttachment(msg.author.displayAvatarURL);
+            message.channel.send(attachment);
         }
 }
 })
