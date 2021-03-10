@@ -24,7 +24,8 @@ bot.on('message', msg=>{
         msg.channel.send(number.toString().substring(0,4)); // sends a message to the channel with the number
     }
     if(msg.content === "time"){
-        let date = new Date().toLocaleString('en-GB', {timeZone: 'Asia/Calcutta'});
+        process.env.TZ = "Asia/Calcutta";
+        let date = new Date();
         msg.channel.send(date);
     }
 
