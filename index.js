@@ -31,7 +31,11 @@ bot.on('message', msg=>{
         let date = new Date().toLocaleDateString('en-IN', {timeZone: 'Asia/Calcutta'});
         msg.channel.send(date);
     }
+    if (command === 'avatar') {
+        if (!message.mentions.users.size) {
+            return message.channel.send(`Your avatar: <${message.author.displayAvatarURL({ format: "png", dynamic: true })}>`);
+        }
 }
-)
+})
 
 bot.login(process.env.token);
