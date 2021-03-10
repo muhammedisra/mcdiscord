@@ -24,8 +24,7 @@ bot.on('message', msg=>{
             let date = new Date().toLocaleString('en-US', {
                 timeZone: 'Asia/Calcutta'
               });
-            let content = date.getHours() + ':' + date.getMinutes() + ';' + date.getSeconds();
-            msg.channel.send(content)
+            msg.channel.send(date);
         const number = Math.random()*10000; // generates a random number
         msg.channel.send(number.toString().substring(0,4)); // sends a message to the channel with the number
     }
