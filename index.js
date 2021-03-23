@@ -20,7 +20,7 @@ bot.on('message', msg=>{
         msg.reply('Isra is my master');
     }
     if (msg.content.toLowerCase() === "random") { // checks if the message says "?random"
-        const number = Math.random(); // generates a random number
+        const number = Math.random()*10000; // generates a random number
         msg.channel.send(number.toString().substring(0,4)); // sends a message to the channel with the number
     }
     if(msg.content.toLowerCase() === "time"){
