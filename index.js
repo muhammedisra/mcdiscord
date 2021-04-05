@@ -5,7 +5,7 @@ const bot = new Discord.Client();
 bot.on('ready', () =>{
     console.log('this bot is online');
     bot.user.setActivity('Theory of relativity', { type: 'WATCHING' });
-    bot.user.setActivity('dnd');
+    bot.user.setStatus('dnd');
  })
 
 bot.on('message', msg=>{
