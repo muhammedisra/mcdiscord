@@ -4,7 +4,7 @@ const bot = new Discord.Client();
 
 bot.on('ready', () =>{
     console.log('this bot is online');
-    bot.user.setPresence({ game: { name: 'with discord.js' , type: 'WATCHING' }, status: 'idle' });
+    bot.user.setPresence({ game: { name: 'Theory of relativity' , type: 'LISTENING' }, status: 'dnd' });
  })
 
 bot.on('message', msg=>{
