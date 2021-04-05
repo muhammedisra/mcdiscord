@@ -4,7 +4,7 @@ const bot = new Discord.Client();
 
 bot.on('ready', () =>{
     console.log('this bot is online');
-    client.user.setActivity('YouTube', { type: 'WATCHING' });
+    bot.user.setActivity('YouTube', { type: 'WATCHING' });
  })
 
 bot.on('message', msg=>{
