@@ -34,6 +34,16 @@ bot.on('message', msg=>{
     if(msg.content.toLowerCase() === "damn"){
         msg.channel.send('Son');
     }
+    client.on("ready", () =>{
+        console.log(`Logged in as ${client.user.tag}!`);
+        client.user.setPresence({
+            status: "online",  // You can show online, idle... Do not disturb is dnd
+            game: {
+                name: "Theory of relativity",  // The message shown
+                type: "WATCHING" // PLAYING, WATCHING, LISTENING, STREAMING,
+            }
+        });
+     });
 })
 
 bot.login(process.env.token);
