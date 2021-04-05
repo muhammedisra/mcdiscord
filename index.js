@@ -11,7 +11,7 @@ bot.on('ready', () =>{
             type: "PLAYING" // PLAYING, WATCHING, LISTENING, STREAMING,
         }
     });
- });
+ })
 
 bot.on('message', msg=>{
     if(msg.content.toUpperCase() === "HELLO"){
