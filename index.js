@@ -34,10 +34,6 @@ bot.on('message', msg=>{
     if(msg.content.toLowerCase() === "damn"){
         msg.channel.send('Son');
     }
-
-    client.user.setActivity('Einstein\'s theory of relativity', { type: 'WATCHING' });
-
-    
 })
 
 bot.login(process.env.token);
