@@ -34,6 +34,8 @@ bot.on('message', msg=>{
     if(msg.content.toLowerCase() === "damn"){
         msg.channel.send('Son');
     }
+
+    await bot.change_presence(activity=discord.Game(name="Einstein's Theory of relativity"))
     
 })
 
