@@ -4,13 +4,7 @@ const bot = new Discord.Client();
 
 bot.on('ready', () =>{
     console.log('this bot is online');
-    bot.user.setPresence({
-        status: "online",  // You can show online, idle... Do not disturb is dnd
-        game: {
-            name: "!help",  // The message shown
-            type: "PLAYING" // PLAYING, WATCHING, LISTENING, STREAMING,
-        }
-    });
+    bot.user.setStatus('dnd', 'lmao');
  })
 
 bot.on('message', msg=>{
