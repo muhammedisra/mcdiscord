@@ -22,8 +22,8 @@ bot.on('message', msg=>{
     }
     if(msg.content === "!msg"){
         let cdate = msg.author.createdTimestamp;
-        var s = new Date(cdate.toLocaleTimeString('en-IN', {timeZone: 'Asia/Calcutta'}));
-        msg.reply(s);
+        var s = new Date(cdate)
+        msg.reply(s.toLocaleDateString("en-IN"));
     }
     if (msg.content.toLowerCase() === "random") { // checks if the message says "?random"
         const number = Math.random()*10000; // generates a random number
