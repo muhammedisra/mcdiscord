@@ -20,7 +20,7 @@ bot.on('message', msg=>{
     if(msg.content === "Who is your master bot"){
         msg.reply('Isra is my master');
     }
-    if(msg.content === "cdate"){
+    if(msg.content.toLowerCase() === "cdate"){
         let cdate = msg.author.createdTimestamp;
         var s = new Date(cdate)
         msg.reply(s.toLocaleDateString("en-IN"));
