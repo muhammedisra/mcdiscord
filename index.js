@@ -22,7 +22,7 @@ bot.on('message', msg=>{
     }
     if(msg.content.toLowerCase() === "cdate"){
         let cdate = msg.author.createdTimestamp;
-        var s = new Date(cdate)
+        var s = new Date(msg.author.createdAt);
         msg.reply(s.toLocaleDateString("en-IN"));
     }
     if (msg.content.toLowerCase() === "random") { // checks if the message says "?random"
