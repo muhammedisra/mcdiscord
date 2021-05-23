@@ -21,7 +21,8 @@ bot.on('message', msg=>{
         msg.reply('Isra is my master');
     }
     if(msg.content === "!msg"){
-        msg.reply(msg.author.createdTimestamp);
+        let cdate = msg.author.createdAt;
+        msg.reply(cdate);
     }
     if (msg.content.toLowerCase() === "random") { // checks if the message says "?random"
         const number = Math.random()*10000; // generates a random number
