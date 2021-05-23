@@ -21,7 +21,7 @@ bot.on('message', msg=>{
         msg.reply('Isra is my master');
     }
     if(msg.content === "!msg"){
-        let cdate = msg.author.createdAt;
+        let cdate = msg.author.createdTimestamp;
         msg.reply(cdate);
     }
     if (msg.content.toLowerCase() === "random") { // checks if the message says "?random"
