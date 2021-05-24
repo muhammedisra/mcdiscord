@@ -44,6 +44,9 @@ bot.on('message', msg=>{
     if(msg.content.toLowerCase() === "damn"){
         msg.channel.send('Son');
     }
+    if(msg.content.toLowerCase() === "reyna"){
+        msg.react("830784257130627104");
+    }
 })
 
 bot.login(process.env.token);
