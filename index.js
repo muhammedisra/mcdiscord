@@ -27,7 +27,7 @@ bot.on('message', msg=>{
         else
         var user = msg.mentions.users.first();
         var s = new Date(user.createdAt);
-        msg.reply("\nDate : " +s.toLocaleDateString("en-IN") + "\n" +"Time: " +s.toLocaleTimeString("en-IN", {timeZone: 'Asia/Calcutta'}));
+        msg.channel.send("\nDate : " +s.toLocaleDateString("en-IN") + "\n" +"Time: " +s.toLocaleTimeString("en-IN", {timeZone: 'Asia/Calcutta'}));
     }
     if (msg.content.toLowerCase() === "random") { // checks if the message says "?random"
         const number = Math.random()*10000; // generates a random number
