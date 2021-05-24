@@ -21,7 +21,12 @@ bot.on('message', msg=>{
         msg.reply('Isra is my master');
     }
     if(msg.content.toLowerCase() === "cdate"){
-        var s = new Date(msg.author.createdAt);
+        let no = msg.mentions.users.size;
+        if(no == 0)
+        var user = msg.author;
+        else
+        var user = msg.mentions.users.first();
+        var s = new Date(user.createdAt);
         msg.reply("\nDate : " +s.toLocaleDateString("en-IN") + "\n" +"Time: " +s.toLocaleTimeString("en-IN", {timeZone: 'Asia/Calcutta'}));
     }
     if (msg.content.toLowerCase() === "random") { // checks if the message says "?random"
