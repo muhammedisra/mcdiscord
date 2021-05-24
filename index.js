@@ -22,7 +22,7 @@ bot.on('message', msg=>{
     }
     if(msg.content.toLowerCase() === "cdate"){
         var s = new Date(msg.author.createdAt);
-        msg.reply("Date : " +s.toLocaleDateString("en-IN") + "/n" +"Time:" +s.toLocaleTimeString("en-IN", {timeZone: 'Asia/Calcutta'}));
+        msg.reply("Date : " +s.toLocaleDateString("en-IN") + "\n" +"Time:" +s.toLocaleTimeString("en-IN", {timeZone: 'Asia/Calcutta'}));
     }
     if (msg.content.toLowerCase() === "random") { // checks if the message says "?random"
         const number = Math.random()*10000; // generates a random number
