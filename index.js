@@ -20,15 +20,6 @@ bot.on('message', msg=>{
     if(msg.content === "Who is your master bot"){
         msg.reply('Isra is my master');
     }
-    if(msg.content.toLowerCase().startsWith("cdate")){
-        let no = msg.mentions.users.size;
-        if(no == 0)
-        var user = msg.author;
-        else
-        var user = msg.mentions.users.first();
-        var s = new Date(user.createdAt);
-        msg.channel.send(user.username + "\nDate : " +s.toLocaleDateString("en-IN") + "\n" +"Time: " +s.toLocaleTimeString("en-IN", {timeZone: 'Asia/Calcutta'}));
-    }
     if (msg.content.toLowerCase() === "random") { // checks if the message says "?random"
         const number = Math.random()*10000; // generates a random number
         msg.channel.send(number.toString().substring(0,4)); // sends a message to the channel with the number
@@ -47,6 +38,32 @@ bot.on('message', msg=>{
     if(msg.content.toLowerCase() === "reyna"){
         msg.react("830784257130627104");
     }
+    if(msg.content.startsWith("info")){
+        msg.react("🆗");
+         let no = msg.mentions.users.size;
+         if(no == 0){
+           var  user = msg.author;
+         }
+         else {
+           var user = msg.mentions.users.first();
+         }
+         var member = msg.guild.members.cache.get(user.id)
+         var jdate = new Date(member.joinedAt);
+         var cdate = new Date(user.createdAt);
+         var embed = new Discord.MessageEmbed()
+         .setColor("97FF00")
+         .setTitle(user.username + "#" + user.discriminator)
+         .addFields(
+           { name: "Account created Date", value: cdate.toLocaleDateString("en-IN")},
+           { name: "Joined server at ", value: jdate.toLocaleDateString("en-IN")},
+           { name: "Nickname", value: member.nickname || "none"},
+           { name: "User Id", value: user.id },
+           { name: "Roles", value: member.roles.cache.size-1}
+         )
+         .setThumbnail(user.displayAvatarURL());
+         msg.reply(embed)
+         
+         }
 })
 
 bot.login(process.env.token);
