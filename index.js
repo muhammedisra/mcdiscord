@@ -61,7 +61,7 @@ bot.on('message', msg=>{
            { name: "Roles", value: member.roles.cache.size-1}
          )
          .setThumbnail(user.displayAvatarURL());
-         msg.reply(embed)
+         msg.channel.send(embed)
          
          }
 })
