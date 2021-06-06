@@ -68,7 +68,7 @@ bot.on('message', msg=>{
 
 
 
-client.on("messageDelete", del =>{
+bot.on("messageDelete", del =>{
     if(del.channel.id == "787302397902979073")
     client.channels.cache.get("851053934986395721").send(del.content+"\n Author "+del.author.username);
   })
