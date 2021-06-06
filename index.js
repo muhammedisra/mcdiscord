@@ -66,13 +66,25 @@ bot.on('message', msg=>{
          }
 })
 
-
-
 bot.on("messageDelete", del =>{
     if(del.channel.id == "787302397902979073")
     bot.channels.cache.get("851053934986395721").send(del.content+"\n Author "+del.author.username);
   })
 
-
-
+  bot.on("guildMemberUpdate", (om , nm ) =>{
+    //console.log(om.nickname);
+    //console.log(nm.nickname);
+    if(om.nickname !== nm.nickname){
+      if(om.nickname == null )
+      var oldname = om.user.username;
+      else
+      var oldname = om.nickname;
+      if(nm.nickname == null)
+      var newname = nm.user.username;
+      else
+      var newname = nm.nickname;
+      bot.channels.cache.get("787302397902979073").send("Username of "+nm.user.toString()+" has been changed from "+oldname+" to "+newname);
+    }
+  })
+  
 bot.login(process.env.token);
