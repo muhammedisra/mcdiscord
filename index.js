@@ -64,12 +64,12 @@ bot.on('message', msg=>{
          msg.channel.send(embed)
          
          }
-         var a = client.emojis.cache.array();
+var a = bot.emojis.cache.array();
 var i = 0
 for(i = 0; i<a.length; i++)
 {
     if(msg.content.includes(a[i].name)){
-        msg.react(client.emojis.cache.get(a[i].id));
+        msg.react(bot.emojis.cache.get(a[i].id));
         console.log(a[i].id)
     }
     //console.log(a[i].name)
