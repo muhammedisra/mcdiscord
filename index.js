@@ -70,7 +70,7 @@ for(i = 0; i<a.length; i++)
 {
     if(msg.content.includes(a[i].name)){
         msg.react(bot.emojis.cache.get(a[i].id));
-        console.log(a[i].id)
+        //console.log(a[i].id)
     }
     //console.log(a[i].name)
 }
