@@ -88,8 +88,7 @@ bot.on("messageDelete", del =>{
   })
 
   bot.on("guildMemberUpdate", (om , nm ) =>{
-    //console.log(om.nickname);
-    //console.log(nm.nickname);
+    
     if(om.nickname !== nm.nickname){
       if(om.nickname == null )
       var oldname = om.user.username;
