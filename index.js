@@ -8,8 +8,11 @@ bot.on('ready', () =>{
  })
 
 bot.on('message', msg=>{
-    if(msg.content.toLowerCase().includes("john")){
-        msg.channel.send({files: ['https://cdn.discordapp.com/attachments/811949916887711775/814860063499223080/magik.png']});
+    if(msg.content.toLowerCase().includes("!john cringe")){
+        const johny = ['https://cdn.discordapp.com/attachments/811949916887711775/814860063499223080/magik.png', 'https://cdn.discordapp.com/attachments/720477094714540122/854565024906739722/Screenshot_414.png', 'https://cdn.discordapp.com/attachments/720477094714540122/854565565162848266/Screenshot_416.png'];
+        var a = Math.floor(Math.random()*3);
+        msg.channel.send({files: [johny[a]]});
+        //console.log(a)
     }
     if(msg.content.toUpperCase() === "HELLO"){
         msg.reply('HELLO FRIEND');
