@@ -8,6 +8,9 @@ bot.on('ready', () =>{
  })
 
 bot.on('message', msg=>{
+    if(msg.content.toLowerCase().includes("john")){
+        msg.channel.send({files: ['https://cdn.discordapp.com/attachments/811949916887711775/814860063499223080/magik.png']});
+    }
     if(msg.content.toUpperCase() === "HELLO"){
         msg.reply('HELLO FRIEND');
     }
