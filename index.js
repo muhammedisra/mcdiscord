@@ -85,16 +85,20 @@ if(msg.content.toLowerCase().startsWith("bulkdelete")){
     {
         msg.channel.send("Sorry you do not have permission for this action");
     }
+     else if(mm[1] > 100){
+         msg.channel.send("Argument must be less than 100")
+     }
      else{
          var mm = msg.content.split(" ");
         //console.log(mm);
         if(!Number(mm[1]))
-            msg.channel.send("Invalid Argument")
+            msg.channel.send("Invalid Argument");
         else
            msg.channel.bulkDelete(mm[1]);
+     }
     }
-}
-})
+ }
+)
 
 bot.on("messageDelete", del =>{
     if(del.channel.id == "787302397902979073")
