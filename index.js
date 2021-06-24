@@ -97,8 +97,7 @@ if(msg.content.toLowerCase().startsWith("bulkdelete")){
            msg.channel.bulkDelete(mm[1]);
      }
     }
- }
-)
+ })
 
 bot.on("messageDelete", del =>{
     if(del.channel.id == "787302397902979073")
