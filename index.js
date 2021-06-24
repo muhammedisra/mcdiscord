@@ -80,6 +80,20 @@ for(i = 0; i<a.length; i++)
     }
     //console.log(a[i].name)
 }
+if(msg.content.toLowerCase().startsWith("bulkdelete")){
+    if (!msg.guild.members.cache.get(msg.author.id).roles.cache.has("857589875812466720"))
+    {
+        msg.channel.send("Sorry you do not have permission for this action");
+    }
+     else{
+         var mm = msg.content.split(" ");
+        //console.log(mm);
+        if(!Number(mm[1]))
+            msg.channel.send("Invalid Argument")
+        else
+           msg.channel.bulkDelete(mm[1]);
+    }
+}
 })
 
 bot.on("messageDelete", del =>{
