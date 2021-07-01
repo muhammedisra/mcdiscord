@@ -34,8 +34,8 @@ bot.on('message', msg=>{
         msg.channel.send(number.toString().substring(0,4)); // sends a message to the channel with the number
     }
     if(msg.content.toLowerCase() === "time"){
-        let time = DateTime.now().setZone("Asia/Culcutta");
-        msg.channel.send(time.toLocaleString(DateTime.TIME_WITH_SHORT_OFFSET));
+        let time = DateTime.now();
+        msg.channel.send(time.toLocaleString(DateTime.TIME_WITH_SECONDS));
     }
     if(msg.content.toLowerCase() === "date"){
         let date = new Date().toLocaleDateString('en-IN', {timeZone: 'Asia/Calcutta'});
