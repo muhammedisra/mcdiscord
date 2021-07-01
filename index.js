@@ -35,7 +35,7 @@ bot.on('message', msg=>{
     }
     if(msg.content.toLowerCase() === "time"){
         let time = DateTime.now();
-        msg.channel.send(time.toLocaleString(DateTime.TIME_WITH_SHORT_OFFSET));
+        msg.channel.send(time.toLocaleString(DateTime.TIME_SIMPLE));
     }
     if(msg.content.toLowerCase() === "date"){
         let date = new Date().toLocaleDateString('en-IN', {timeZone: 'Asia/Calcutta'});
