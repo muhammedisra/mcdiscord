@@ -39,7 +39,7 @@ bot.on('message', msg=>{
     }
     if(msg.content.toLowerCase() === "date"){
         let date = DateTime.now()
-        msg.channel.send(date.toLocaleString(DateTime.DATETIME_HUGE))
+        msg.channel.send(date.toLocaleString(DateTime.DATETIME_MED_WITH_WEEKDAY))
     }
     if(msg.content.toLowerCase() === "damn"){
         msg.channel.send('Son');
