@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const { DateTime } = require("luxon");
 const { Settings } = require("luxon");
 Settings.defaultZoneName = "Asia/Kolkata"
-Settings.defaultLocale ="IN"
+Settings.defaultLocale ="en-IN"
 
 bot.on('ready', () =>{
     console.log('this bot is online');
