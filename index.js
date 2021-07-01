@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const { DateTime } = require("luxon");
 const { Settings } = require("luxon");
-Settings.defaultZone = "Asia/Calcutta";
+Settings.defaultZoneName = "Asia/Kolkata"
 Settings.defaultLocale ="IN"
 
 bot.on('ready', () =>{
