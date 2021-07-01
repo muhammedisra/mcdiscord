@@ -1,5 +1,8 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+const { DateTime } = require("luxon");
+const { Settings } = require("luxon");
+Settings.defaultZone = "Asia/Calcutta";
 
 
 bot.on('ready', () =>{
@@ -31,7 +34,7 @@ bot.on('message', msg=>{
         msg.channel.send(number.toString().substring(0,4)); // sends a message to the channel with the number
     }
     if(msg.content.toLowerCase() === "time"){
-        let time = new Date().toLocaleTimeString('en-IN', {timeZone: 'Asia/Calcutta'});
+        let time = DateTime.DATETIME_FULL;
         msg.channel.send(time);
     }
     if(msg.content.toLowerCase() === "date"){
