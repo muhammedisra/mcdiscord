@@ -38,8 +38,8 @@ bot.on('message', msg=>{
         msg.channel.send(time.toLocaleString(DateTime.TIME_WITH_SHORT_OFFSET));
     }
     if(msg.content.toLowerCase() === "date"){
-        let date = new Date().toLocaleDateString('en-IN', {timeZone: 'Asia/Calcutta'});
-        msg.channel.send(date);
+        let date = DateTime.now()
+        msg.channel.send(date.toLocaleString(DateTime.DATETIME_HUGE))
     }
     if(msg.content.toLowerCase() === "damn"){
         msg.channel.send('Son');
