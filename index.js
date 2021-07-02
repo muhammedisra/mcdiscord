@@ -23,6 +23,9 @@ bot.on('message', msg=>{
     
 if(msg.content.toLowerCase() == "timetable"){
     const sub = ['Physics', 'Chemistry', 'Maths', 'Computer', 'English', 'Enjoy Class Over'];
+    const teacher = ['Cherian','Dhanya','Sherly', 'Akshara', 'Imma or Lakshmi','Do you need Teacher for that'];
+    const teacher2 = ['Gayathri','Sruthi','Bini','Akshara', 'Imma or Lakshmi','Do you need teacher for that'];
+    let teach
     let date = DateTime.now();
     let subb;
     const sec = (date.hour*60*60)+(date.minute*60);
@@ -31,11 +34,11 @@ if(msg.content.toLowerCase() == "timetable"){
     switch(date.weekday){
         case 1 :{
             if(sec>=25200 && sec<=31500)
-            subb = sub[2];
+            subb = sub[2];teach = teacher[2];
             if(sec>=31500 && sec<=35100)
-            subb = sub[1];
+            subb = sub[1];teach = teacher[1];
             if(sec>=35100 && sec<=38700)
-            subb = sub[3];
+            subb = sub[3];teach = teacher[3];
             if(sec>=38700 && sec<=42300)
             subb = sub[0];
             if(sec>=42300 && sec<=45900)
@@ -100,7 +103,7 @@ if(msg.content.toLowerCase() == "timetable"){
             if(sec>=31500 && sec<=35100)
             subb = sub[3];
             if(sec>=35100 && sec<=38700)
-            subb = sub[4];
+            subb = sub[4];teach = teacher[4];
             if(sec>=38700 && sec<=42300)
             subb = sub[0];
             if(sec>=42300 && sec<=45900)
@@ -128,7 +131,8 @@ if(msg.content.toLowerCase() == "timetable"){
         .addFields(
             { name: "Subject", value: subb},
             { name:"Time", value:date.toLocaleString(DateTime.TIME_SIMPLE)},
-            { name: "Day", value:date.weekdayLong}
+            { name: "Day", value:date.weekdayLong},
+            {name:"Teacher", value:teach}
         );
     msg.channel.send(a);
     
