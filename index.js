@@ -34,7 +34,7 @@ if(msg.content.toLowerCase() == "timetable"){
             subb = sub[2];
             if(sec>31500 && sec<35100)
             subb = sub[1];
-            if(sec>31500 && sec<38700)
+            if(sec>35100 && sec<38700)
             subb = sub[3];
             if(sec>38700 && sec<42300)
             subb = sub[0];
@@ -51,7 +51,7 @@ if(msg.content.toLowerCase() == "timetable"){
             subb = sub[0];
             if(sec>31500 && sec<35100)
             subb = sub[3];
-            if(sec>31500 && sec<38700)
+            if(sec>35100 && sec<38700)
             subb = sub[4];
             if(sec>38700 && sec<42300)
             subb = sub[1];
@@ -67,7 +67,7 @@ if(msg.content.toLowerCase() == "timetable"){
             subb = sub[2];
             if(sec>31500 && sec<35100)
             subb = sub[1];
-            if(sec>31500 && sec<38700)
+            if(sec>35100 && sec<38700)
             subb = sub[0];
             if(sec>38700 && sec<42300)
             subb = sub[4];
@@ -83,7 +83,7 @@ if(msg.content.toLowerCase() == "timetable"){
             subb = sub[4];
             if(sec>31500 && sec<35100)
             subb = sub[2];
-            if(sec>31500 && sec<38700)
+            if(sec>35100 && sec<38700)
             subb = sub[0];
             if(sec>38700 && sec<42300)
             subb = sub[3];
@@ -99,7 +99,7 @@ if(msg.content.toLowerCase() == "timetable"){
             subb = sub[1];
             if(sec>31500 && sec<35100)
             subb = sub[3];
-            if(sec>31500 && sec<38700)
+            if(sec>35100 && sec<38700)
             subb = sub[4];
             if(sec>38700 && sec<42300)
             subb = sub[0];
