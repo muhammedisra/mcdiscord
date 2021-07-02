@@ -20,6 +20,120 @@ bot.on('message', msg=>{
     if(msg.content.toUpperCase() === "HELLO"){
         msg.reply('HELLO FRIEND');
     }
+    
+if(msg.content.toLowerCase() == "timetable"){
+    const sub = ['Physics', 'Chemistry', 'Maths', 'Computer', 'English', 'Enjoy Class Over'];
+    let date = DateTime.now();
+    let subb;
+    const sec = (date.hour*60*60)+(date.minute*60);
+    
+
+    switch(date.weekday){
+        case 1 :{
+            if(sec>25200 && sec<31500)
+            subb = sub[2];
+            if(sec>31500 && sec<35100)
+            subb = sub[1];
+            if(sec>31500 && sec<38700)
+            subb = sub[3];
+            if(sec>38700 && sec<42300)
+            subb = sub[0];
+            if(sec>42300 && sec<45900)
+            subb = sub[4];
+            if(sec>45900)
+            subb = sub[5];
+            //msg.channel.send(subb);
+            break;
+
+        }
+        case 2:{
+            if(sec>25200 && sec<31500)
+            subb = sub[0];
+            if(sec>31500 && sec<35100)
+            subb = sub[3];
+            if(sec>31500 && sec<38700)
+            subb = sub[4];
+            if(sec>38700 && sec<42300)
+            subb = sub[1];
+            if(sec>42300 && sec<45900)
+            subb = sub[2];
+            if(sec>45900)
+            subb = sub[5];
+            //msg.channel.send(subb);
+            break;
+        }
+        case 3 :{
+            if(sec>25200 && sec<31500)
+            subb = sub[2];
+            if(sec>31500 && sec<35100)
+            subb = sub[1];
+            if(sec>31500 && sec<38700)
+            subb = sub[0];
+            if(sec>38700 && sec<42300)
+            subb = sub[4];
+            if(sec>42300 && sec<45900)
+            subb = sub[3];
+            if(sec>45900)
+            subb = sub[5]
+            //msg.channel.send(subb);
+            break;
+        }
+        case 4:{
+            if(sec>25200 && sec<31500)
+            subb = sub[4];
+            if(sec>31500 && sec<35100)
+            subb = sub[2];
+            if(sec>31500 && sec<38700)
+            subb = sub[0];
+            if(sec>38700 && sec<42300)
+            subb = sub[3];
+            if(sec>42300 && sec<45900)
+            subb = sub[1]
+            if(sec>45900)
+            subb = sub[5]
+            //msg.channel.send(subb);
+            break;
+        }
+        case 5:{
+            if(sec>25200 && sec<31500)
+            subb = sub[1];
+            if(sec>31500 && sec<35100)
+            subb = sub[3];
+            if(sec>31500 && sec<38700)
+            subb = sub[4];
+            if(sec>38700 && sec<42300)
+            subb = sub[0];
+            if(sec>42300 && sec<45900)
+            subb = sub[2];
+            if(sec>45900)
+            subb = sub[5];
+            //msg.channel.send(subb);
+            break;
+        }
+        case 6:{
+            msg.channel.send("Today is Saturday You Idiot");
+        }
+        case 7:{
+            msg.channel.send("Today is sunday Are you mad?");
+            break;
+        }
+        default :{
+            msg.channel.send("Sorry unable to fetch timetable");
+            break;
+        }
+    }
+        var a = new Discord.MessageEmbed()
+        .setColor("FB4400")
+        .setTitle("TimeTable")
+        .addFields(
+            { name: "Subject", value: subb},
+            { name:"Time", value:date.toLocaleString(DateTime.TIME_SIMPLE)},
+            { name: "Day", value:date.weekdayLong}
+        );
+    msg.channel.send(a);
+    
+
+    }
     if(msg.content.toLowerCase() === "bye"){
         msg.reply('bye , But my master(isra) will be online most of the time');
     }
