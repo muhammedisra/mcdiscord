@@ -123,7 +123,7 @@ if(msg.content.toLowerCase() == "timetable"){
         }
     }
         var a = new Discord.MessageEmbed()
-        .setColor("FB4400")
+        .setColor("RANDOM")
         .setTitle("TimeTable")
         .addFields(
             { name: "Subject", value: subb},
