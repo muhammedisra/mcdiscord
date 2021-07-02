@@ -40,76 +40,76 @@ if(msg.content.toLowerCase() == "timetable"){
             if(sec>=35100 && sec<=38700)
             subb = sub[3];teach = teacher[3];
             if(sec>=38700 && sec<=42300)
-            subb = sub[0];
+            subb = sub[0];teach = teacher[0];
             if(sec>=42300 && sec<=45900)
-            subb = sub[4];
+            subb = sub[4];teach = teacher[4];
             if(sec>=45900)
-            subb = sub[5];
+            subb = sub[5];teach = teacher[5];
             //msg.channel.send(subb);
             break;
 
         }
         case 2:{
             if(sec>=25200 && sec<=31500)
-            subb = sub[0];
+            subb = sub[0];teach = teacher2[0];
             if(sec>=31500 && sec<=35100)
-            subb = sub[3];
+            subb = sub[3];teach = teacher2[3];
             if(sec>=35100 && sec<=38700)
-            subb = sub[4];
+            subb = sub[4];teach = teacher2[4];
             if(sec>=38700 && sec<=42300)
-            subb = sub[1];
+            subb = sub[1];teach = teacher2[1];
             if(sec>=42300 && sec<=45900)
-            subb = sub[2];
+            subb = sub[2];teach = teacher2[2];
             if(sec>=45900)
-            subb = sub[5];
+            subb = sub[5];teach = teacher2[5];
             //msg.channel.send(subb);
             break;
         }
         case 3 :{
             if(sec>=25200 && sec<=31500)
-            subb = sub[2];
+            subb = sub[2];teach = teacher[2];
             if(sec>=31500 && sec<=35100)
-            subb = sub[1];
+            subb = sub[1];teach = teacher[1];
             if(sec>=35100 && sec<=38700)
-            subb = sub[0];
+            subb = sub[0];teach = teacher[0];
             if(sec>=38700 && sec<=42300)
-            subb = sub[4];
+            subb = sub[4];teach = teacher[4];
             if(sec>=42300 && sec<=45900)
-            subb = sub[3];
+            subb = sub[3];teach = teacher[3];
             if(sec>=45900)
-            subb = sub[5]
+            subb = sub[5];teach = teacher[5];
             //msg.channel.send(subb);
             break;
         }
         case 4:{
             if(sec>=25200 && sec<=31500)
-            subb = sub[4];
+            subb = sub[4];teach = teacher2[4];
             if(sec>=31500 && sec<=35100)
-            subb = sub[2];
+            subb = sub[2];teach = teacher2[2];
             if(sec>=35100 && sec<=38700)
-            subb = sub[0];
+            subb = sub[0];teach = teacher2[0];
             if(sec>=38700 && sec<=42300)
-            subb = sub[3];
+            subb = sub[3];teach = teacher2[3];
             if(sec>=42300 && sec<=45900)
-            subb = sub[1]
+            subb = sub[1];teach = teacher2[1];
             if(sec>=45900)
-            subb = sub[5]
+            subb = sub[5];teach = teacher2[5];
             //msg.channel.send(subb);
             break;
         }
         case 5:{
             if(sec>=25200 && sec<=31500)
-            subb = sub[1];
+            subb = sub[1];teach = teacher[1];
             if(sec>=31500 && sec<=35100)
-            subb = sub[3];
+            subb = sub[3];teach = teacher[3];
             if(sec>=35100 && sec<=38700)
             subb = sub[4];teach = teacher[4];
             if(sec>=38700 && sec<=42300)
-            subb = sub[0];
+            subb = sub[0];teach = teacher[0];
             if(sec>=42300 && sec<=45900)
-            subb = sub[2];
+            subb = sub[2];teach = teacher[2];
             if(sec>=45900)
-            subb = sub[5];
+            subb = sub[5];teach = teacher[5];
             //msg.channel.send(subb);
             break;
         }
@@ -130,9 +130,9 @@ if(msg.content.toLowerCase() == "timetable"){
         .setTitle("TimeTable")
         .addFields(
             { name: "Subject", value: subb},
+            {name:"Teacher", value:teach},
             { name:"Time", value:date.toLocaleString(DateTime.TIME_SIMPLE)},
-            { name: "Day", value:date.weekdayLong},
-            {name:"Teacher", value:teach}
+            { name: "Day", value:date.weekdayLong}
         );
     msg.channel.send(a);
     
