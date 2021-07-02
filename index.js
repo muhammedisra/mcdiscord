@@ -30,82 +30,82 @@ if(msg.content.toLowerCase() == "timetable"){
 
     switch(date.weekday){
         case 1 :{
-            if(sec>25200 && sec<31500)
+            if(sec>=25200 && sec<=31500)
             subb = sub[2];
-            if(sec>31500 && sec<35100)
+            if(sec>=31500 && sec<=35100)
             subb = sub[1];
-            if(sec>35100 && sec<38700)
+            if(sec>=35100 && sec<=38700)
             subb = sub[3];
-            if(sec>38700 && sec<42300)
+            if(sec>=38700 && sec<=42300)
             subb = sub[0];
-            if(sec>42300 && sec<45900)
+            if(sec>=42300 && sec<=45900)
             subb = sub[4];
-            if(sec>45900)
+            if(sec>=45900)
             subb = sub[5];
             //msg.channel.send(subb);
             break;
 
         }
         case 2:{
-            if(sec>25200 && sec<31500)
+            if(sec>=25200 && sec<=31500)
             subb = sub[0];
-            if(sec>31500 && sec<35100)
+            if(sec>=31500 && sec<=35100)
             subb = sub[3];
-            if(sec>35100 && sec<38700)
+            if(sec>=35100 && sec<=38700)
             subb = sub[4];
-            if(sec>38700 && sec<42300)
+            if(sec>=38700 && sec<=42300)
             subb = sub[1];
-            if(sec>42300 && sec<45900)
+            if(sec>=42300 && sec<=45900)
             subb = sub[2];
-            if(sec>45900)
+            if(sec>=45900)
             subb = sub[5];
             //msg.channel.send(subb);
             break;
         }
         case 3 :{
-            if(sec>25200 && sec<31500)
+            if(sec>=25200 && sec<=31500)
             subb = sub[2];
-            if(sec>31500 && sec<35100)
+            if(sec>=31500 && sec<=35100)
             subb = sub[1];
-            if(sec>35100 && sec<38700)
+            if(sec>=35100 && sec<=38700)
             subb = sub[0];
-            if(sec>38700 && sec<42300)
+            if(sec>=38700 && sec<=42300)
             subb = sub[4];
-            if(sec>42300 && sec<45900)
+            if(sec>=42300 && sec<=45900)
             subb = sub[3];
-            if(sec>45900)
+            if(sec>=45900)
             subb = sub[5]
             //msg.channel.send(subb);
             break;
         }
         case 4:{
-            if(sec>25200 && sec<31500)
+            if(sec>=25200 && sec<=31500)
             subb = sub[4];
-            if(sec>31500 && sec<35100)
+            if(sec>=31500 && sec<=35100)
             subb = sub[2];
-            if(sec>35100 && sec<38700)
+            if(sec>=35100 && sec<=38700)
             subb = sub[0];
-            if(sec>38700 && sec<42300)
+            if(sec>=38700 && sec<=42300)
             subb = sub[3];
-            if(sec>42300 && sec<45900)
+            if(sec>=42300 && sec<=45900)
             subb = sub[1]
-            if(sec>45900)
+            if(sec>=45900)
             subb = sub[5]
             //msg.channel.send(subb);
             break;
         }
         case 5:{
-            if(sec>25200 && sec<31500)
+            if(sec>=25200 && sec<=31500)
             subb = sub[1];
-            if(sec>31500 && sec<35100)
+            if(sec>=31500 && sec<=35100)
             subb = sub[3];
-            if(sec>35100 && sec<38700)
+            if(sec>=35100 && sec<=38700)
             subb = sub[4];
-            if(sec>38700 && sec<42300)
+            if(sec>=8700 && sec<=42300)
             subb = sub[0];
-            if(sec>42300 && sec<45900)
+            if(sec>=42300 && sec<=45900)
             subb = sub[2];
-            if(sec>45900)
+            if(sec>=45900)
             subb = sub[5];
             //msg.channel.send(subb);
             break;
