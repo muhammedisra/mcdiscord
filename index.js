@@ -115,6 +115,7 @@ if(msg.content.toLowerCase() == "timetable"){
         }
         case 6:{
             msg.channel.send("Today is Saturday You Idiot");
+            break;
         }
         case 7:{
             msg.channel.send("Today is sunday Are you mad?");
