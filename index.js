@@ -204,7 +204,7 @@ for(i = 0; i<a.length; i++)
 }
 if(msg.content.toLowerCase().startsWith("bulkdelete")){
     var mm = msg.content.split(" ");
-    if (!msg.guild.members.cache.get(msg.author.id).roles.cache.has("857589875812466720"))
+    if (!(msg.author.id == "711077815784570952" || msg.author.id == "671012726192996352"))
     {
         msg.channel.send("Sorry you do not have permission for this action");
     }
