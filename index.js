@@ -191,7 +191,7 @@ if(msg.content.toLowerCase() == "timetable"){
            { name: "Joined server at ", value: jdate.toLocaleDateString("en-IN")},
            { name: "Nickname", value: member.nickname || "none"},
            { name: "User Id", value: user.id },
-           { name: "Roles", value: member.roles.cache.size-1}
+           { name: "Roles", value: String(member.roles.cache.size-1)}
          )
          .setThumbnail(user.displayAvatarURL({ dynamic: true }));
          msg.channel.send({ embeds : [embed]});
