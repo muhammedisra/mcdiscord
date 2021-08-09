@@ -1,5 +1,7 @@
-const Discord = require('discord.js');
-const bot = new Discord.Client();
+const { Client, Intents } = require('discord.js');
+const bot = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_EMOJIS_AND_STICKERS,Intents.FLAGS.GUILD_MEMBERS,Intents.FLAGS.GUILD_MESSAGE_REACTIONS] });
+const { MessageEmbed } = require('discord.js');
+
 const { DateTime } = require("luxon");
 const { Settings } = require("luxon");
 Settings.defaultZoneName = "Asia/Kolkata"
@@ -10,7 +12,7 @@ bot.on('ready', () =>{
     bot.user.setActivity('Theory of relativity', { type: 'STREAMING' , url: 'https://www.twitch.tv/pokimane' });
  })
 
-bot.on('message', msg=>{
+bot.on('messageCreate', msg=>{
     if(msg.content.toLowerCase().includes("!john cringe")){
         const johny = ['https://cdn.discordapp.com/attachments/811949916887711775/814860063499223080/magik.png', 'https://cdn.discordapp.com/attachments/720477094714540122/854565024906739722/Screenshot_414.png', 'https://cdn.discordapp.com/attachments/720477094714540122/854565565162848266/Screenshot_416.png'];
         var a = Math.floor(Math.random()*3);
@@ -115,18 +117,24 @@ if(msg.content.toLowerCase() == "timetable"){
         }
         case 6:{
             msg.channel.send("Today is Saturday You Idiot");
+            subb = 'Gaming';
+            teach = 'Minecraft';
             break;
         }
         case 7:{
             msg.channel.send("Today is sunday Are you mad?");
+            subb = 'Gaming';
+            teach = "Minecraft";
             break;
         }
         default :{
             msg.channel.send("Sorry unable to fetch timetable");
+            subb = 'Gaming';
+            teach = "Minecraft";
             break;
         }
     }
-        var a = new Discord.MessageEmbed()
+        var a = new MessageEmbed()
         .setColor("RANDOM")
         .setTitle("TimeTable")
         .addFields(
@@ -135,7 +143,7 @@ if(msg.content.toLowerCase() == "timetable"){
             { name:"Time", value:date.toLocaleString(DateTime.TIME_SIMPLE)},
             { name: "Day", value:date.weekdayLong}
         );
-    msg.channel.send(a);
+    msg.channel.send({embeds : [a]});
     
 
     }
@@ -163,9 +171,6 @@ if(msg.content.toLowerCase() == "timetable"){
     if(msg.content.toLowerCase() === "damn"){
         msg.channel.send('Son');
     }
-    if(msg.content.toLowerCase() === "reyna"){
-        msg.react("830784257130627104");
-    }
     if(msg.content.startsWith("info")){
         msg.react("🆗");
          let no = msg.mentions.users.size;
@@ -178,7 +183,7 @@ if(msg.content.toLowerCase() == "timetable"){
          var member = msg.guild.members.cache.get(user.id)
          var jdate = new Date(member.joinedAt);
          var cdate = new Date(user.createdAt);
-         var embed = new Discord.MessageEmbed()
+         var embed = new MessageEmbed()
          .setColor("97FF00")
          .setTitle(user.username + "#" + user.discriminator)
          .addFields(
@@ -189,22 +194,16 @@ if(msg.content.toLowerCase() == "timetable"){
            { name: "Roles", value: member.roles.cache.size-1}
          )
          .setThumbnail(user.displayAvatarURL({ dynamic: true }));
-         msg.channel.send(embed)
+         msg.channel.send({ embeds : [embed]});
          
          }
-var a = bot.emojis.cache.array();
-var i = 0
-for(i = 0; i<a.length; i++)
-{
-    if(msg.content.includes(a[i].name)){
-        msg.react(bot.emojis.cache.get(a[i].id));
-        //console.log(a[i].id)
-    }
-    //console.log(a[i].name)
-}
+ msg.guild.emojis.cache.forEach(em =>{
+        if(msg.content.includes(em.name))
+            msg.react(em.id);
+    })
 if(msg.content.toLowerCase().startsWith("bulkdelete")){
     var mm = msg.content.split(" ");
-    if (!(msg.author.id == "711077815784570952" || msg.author.id == "671012726192996352" || msg.author.id == "724668146614665359"))
+    if (!(msg.author.id == "711077815784570952" || msg.author.id == "671012726192996352" || msg.author.id == "724668146614665359n"))
     {
         msg.channel.send("Sorry you do not have permission for this action");
     }
