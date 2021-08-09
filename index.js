@@ -180,7 +180,7 @@ if(msg.content.toLowerCase() == "timetable"){
          else {
            var user = msg.mentions.users.first();
          }
-         var member = msg.guild.members.cache.get(user.id)
+         var member = msg.guild.members.cache.get(user.id);
          var jdate = new Date(member.joinedAt);
          var cdate = new Date(user.createdAt);
          var embed = new MessageEmbed()
