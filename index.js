@@ -203,7 +203,7 @@ if(msg.content.toLowerCase() == "timetable"){
     })
 if(msg.content.toLowerCase().startsWith("bulkdelete")){
     var mm = msg.content.split(" ");
-    if (!(msg.author.id == "711077815784570952" || msg.author.id == "671012726192996352" || msg.author.id == "724668146614665359n"))
+    if (!(msg.author.id == "711077815784570952" || msg.author.id == "671012726192996352" || msg.author.id == "724668146614665359"))
     {
         msg.channel.send("Sorry you do not have permission for this action");
     }
