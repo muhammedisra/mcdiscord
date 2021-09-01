@@ -234,7 +234,7 @@ if(msg.content.toLowerCase().startsWith("bulkdelete")){
         msg.channel.send("No user found");
          else if(a.status == 200)
          {
-             console.log(a)
+             //console.log(a)
             const valembed = new MessageEmbed()
             .setColor("DARK_RED")
             .setTitle(user)
