@@ -12,7 +12,7 @@ bot.on('ready', () =>{
     bot.user.setActivity('Theory of relativity', { type: 'STREAMING' , url: 'https://www.twitch.tv/pokimane' });
  })
 
-bot.on('messageCreate', msg=>{
+bot.on('messageCreate', async msg=>{
     if(msg.content.toLowerCase().includes("!john cringe")){
         const johny = ['https://cdn.discordapp.com/attachments/811949916887711775/814860063499223080/magik.png', 'https://cdn.discordapp.com/attachments/720477094714540122/854565024906739722/Screenshot_414.png', 'https://cdn.discordapp.com/attachments/720477094714540122/854565565162848266/Screenshot_416.png'];
         var a = Math.floor(Math.random()*3);
