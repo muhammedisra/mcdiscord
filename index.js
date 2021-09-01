@@ -228,7 +228,7 @@ if(msg.content.toLowerCase().startsWith("bulkdelete")){
         var name = user.substring(0,ind);
         var url1 = 'https://api.henrikdev.xyz/valorant/v1/mmr/ap/'+name+'/'+tag;
         let a = await valo(url1);
-        console.log(a)
+        //console.log(a)
          if( a == undefined)
          
         msg.channel.send("No user found");
