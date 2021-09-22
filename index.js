@@ -251,6 +251,12 @@ if(msg.content.toLowerCase().startsWith("bulkdelete")){
          msg.channel.send("Unknown error occured");
     
     }
+
+
+    if(msg.content.toLowerCase()=="quote"){
+        let a = await valo("https://api.quotable.io/random");
+        msg.channel.send(a.content+"\nAuthor: "+a.author);
+     }
     
  })
 
