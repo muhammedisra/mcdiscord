@@ -134,6 +134,8 @@ if(msg.content.toLowerCase() == "timetable"){
             break;
         }
     }
+        let quote = await valo("https://api.quotable.io/random");
+        msg.channel.send(quote.content+"\nAuthor: "+quote.author);
         var a = new MessageEmbed()
         .setColor("RANDOM")
         .setTitle("TimeTable")
