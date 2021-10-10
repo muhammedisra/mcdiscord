@@ -205,6 +205,28 @@ if(msg.content.toLowerCase() == "timetable"){
     })
 
 
+    
+    if(msg.content.toLowerCase().startsWith("weather")){
+
+        let a = await valo("https://api.openweathermap.org/data/2.5/weather?q=aluva,india&units=metric&appid=2edf00afb0dcf94bf49a976279cd8a19")
+        console.log(a)
+        var abd = new MessageEmbed()
+        .setColor("RANDOM")
+        .setTitle("Weather")
+        .setThumbnail("http://openweathermap.org/img/wn/"+a.weather[0].icon+"@2x.png")
+        .addFields(
+            { name : "Weather", value: a.weather[0].main},
+            { name: "Details", value: a.weather[0].description},
+            { name: "Temperature", value: String(a.main.feels_like)+" °C"},
+            { name: "Humidity", value: String(a.main.humidity)+"%"},
+            { name: "Sunrise", value: DateTime.fromSeconds(a.sys.sunrise).toLocaleString(DateTime.TIME_WITH_SECONDS)},
+            { name: "Sunset", value: DateTime.fromSeconds(a.sys.sunset).toLocaleString(DateTime.TIME_WITH_SECONDS)},
+            { name: " Time Updated", value: DateTime.fromSeconds(a.dt).toLocaleString(DateTime.TIME_WITH_SECONDS)} 
+        );
+        msg.channel.send({ embeds: [abd] });
+    }
+
+
 if(msg.content.toLowerCase().startsWith("bulkdelete")){
     var mm = msg.content.split(" ");
     if (!(msg.author.id == "711077815784570952" || msg.author.id == "671012726192996352" || msg.author.id == "724668146614665359"))
