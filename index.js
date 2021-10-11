@@ -206,6 +206,13 @@ if(msg.content.toLowerCase() == "timetable"){
 
 
     
+    if(msg.content.toLowerCase() == 'motivation'){
+        a = await valo("https://www.affirmations.dev/");
+        msg.channel.send(a.affirmation);
+    }
+
+
+
     if(msg.content.toLowerCase().startsWith("weather")){
 
         let a = await valo("https://api.openweathermap.org/data/2.5/weather?q=aluva,india&units=metric&appid=2edf00afb0dcf94bf49a976279cd8a19")
