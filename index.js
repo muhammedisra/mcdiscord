@@ -152,9 +152,7 @@ if(msg.content.toLowerCase() == "timetable"){
     if(msg.content.toLowerCase() === "bye"){
         msg.reply('bye , But my master(isra) will be online most of the time');
     }
-    if(msg.content === "Adharsh"){
-        msg.reply('He is the biggest padippi in the world and doesnt spend any time for recreation');
-    }
+    
     if(msg.content === "Who is your master bot"){
         msg.reply('Isra is my master');
     }
