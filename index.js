@@ -150,8 +150,6 @@ if(msg.content.toLowerCase() == "timetable"){
     if(msg.content =="tb"){
         msg.channel.send("https://cdn.discordapp.com/attachments/787302397902979073/904358371577167882/IMG-20211031-WA0004.jpg");
     }
-
-    }
     if(msg.content.toLowerCase() === "bye"){
         msg.reply('bye , But my master(isra) will be online most of the time');
     }
