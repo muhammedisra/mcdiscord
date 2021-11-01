@@ -24,132 +24,37 @@ bot.on('messageCreate', async msg=>{
     }
     
 if(msg.content.toLowerCase() == "timetable"){
-    const sub = ['Physics', 'Chemistry', 'Maths', 'Computer', 'English', 'Enjoy Class Over'];
-    const teacher = ['Cherian','Dhanya','Sherly', 'Akshara', 'Imma or Lakshmi','Do you need Teacher for that'];
-    const teacher2 = ['Gayathri','Sruthi','Bini','Akshara', 'Imma or Lakshmi','Do you need teacher for that'];
-    let teach
-    let date = DateTime.now();
-    let subb;
+
+
+    const date = DateTime.now();
     const sec = (date.hour*60*60)+(date.minute*60);
-    
-
-    switch(date.weekday){
-        case 1 :{
-            if(sec>=25200 && sec<=31500)
-            {subb = sub[2];teach = teacher[2];}
-            if(sec>=31500 && sec<=35100)
-            {subb = sub[1];teach = teacher[1];}
-            if(sec>=35100 && sec<=38700)
-            {subb = sub[3];teach = teacher[3];}
-            if(sec>=38700 && sec<=42300)
-            {subb = sub[0];teach = teacher[0];}
-            if(sec>=42300 && sec<=45900)
-            {subb = sub[4];teach = teacher[4];}
-            if(sec>=45900)
-            {subb = sub[5];teach = teacher[5];}
-            //msg.channel.send(subb);
-            break;
-
-        }
-        case 2:{
-            if(sec>=25200 && sec<=31500)
-            {subb = sub[0];teach = teacher2[0];}
-            if(sec>=31500 && sec<=35100)
-            {subb = sub[3];teach = teacher2[3];}
-            if(sec>=35100 && sec<=38700)
-            {subb = sub[4];teach = teacher2[4];}
-            if(sec>=38700 && sec<=42300)
-            {subb = sub[1];teach = teacher2[1];}
-            if(sec>=42300 && sec<=45900)
-            {subb = sub[2];teach = teacher2[2];}
-            if(sec>=45900)
-            {subb = sub[5];teach = teacher2[5];}
-            //msg.channel.send(subb);
-            break;
-        }
-        case 3 :{
-            if(sec>=25200 && sec<=31500)
-            {subb = sub[2];teach = teacher[2];}
-            if(sec>=31500 && sec<=35100)
-            {subb = sub[1];teach = teacher[1];}
-            if(sec>=35100 && sec<=38700)
-            {subb = sub[0];teach = teacher[0];}
-            if(sec>=38700 && sec<=42300)
-            {subb = sub[4];teach = teacher[4];}
-            if(sec>=42300 && sec<=45900)
-            {subb = sub[3];teach = teacher[3];}
-            if(sec>=45900)
-            {subb = sub[5];teach = teacher[5];}
-            //msg.channel.send(subb);
-            break;
-        }
-        case 4:{
-            if(sec>=25200 && sec<=31500)
-            {subb = sub[4];teach = teacher2[4];}
-            if(sec>=31500 && sec<=35100)
-            {subb = sub[2];teach = teacher2[2];}
-            if(sec>=35100 && sec<=38700)
-            {subb = sub[0];teach = teacher2[0];}
-            if(sec>=38700 && sec<=42300)
-            {subb = sub[3];teach = teacher2[3];}
-            if(sec>=42300 && sec<=45900)
-            {subb = sub[1];teach = teacher2[1];}
-            if(sec>=45900)
-            {subb = sub[5];teach = teacher2[5];}
-            //msg.channel.send(subb);
-            break;
-        }
-        case 5:{
-            if(sec>=25200 && sec<=31500)
-            {subb = sub[1];teach = teacher[1];}
-            if(sec>=31500 && sec<=35100)
-            {subb = sub[3];teach = teacher[3];}
-            if(sec>=35100 && sec<=38700)
-            {subb = sub[4];teach = teacher[4];}
-            if(sec>=38700 && sec<=42300)
-            {subb = sub[0];teach = teacher[0];}
-            if(sec>=42300 && sec<=45900)
-            {subb = sub[2];teach = teacher[2];}
-            if(sec>=45900)
-            {subb = sub[5];teach = teacher[5];}
-            //msg.channel.send(subb);
-            break;
-        }
-        case 6:{
-            msg.channel.send("Today is Saturday You Idiot");
-            subb = 'Gaming';
-            teach = 'Minecraft';
-            break;
-        }
-        case 7:{
-            msg.channel.send("Today is sunday Are you mad?");
-            subb = 'Gaming';
-            teach = "Minecraft";
-            break;
-        }
-        default :{
-            msg.channel.send("Sorry unable to fetch timetable");
-            subb = 'Gaming';
-            teach = "Minecraft";
-            break;
-        }
-    }
-        let quote = await valo("https://api.quotable.io/random");
+    let peri = msg.content.substring(10);
+    let per;
+    if(peri!="" && Number(peri)!=NaN && peri>0 && peri<6)
+    per = Number(peri)-1;
+    else
+    per = period(sec);
+    const sub = subject(per);
+    let quote = await valo("https://api.quotable.io/random");
         msg.channel.send(quote.content+"\nAuthor: "+quote.author);
         var a = new MessageEmbed()
         .setColor("RANDOM")
         .setTitle("TimeTable")
         .addFields(
-            { name: "Subject", value: subb},
-            {name:"Teacher", value:teach},
-            { name:"Time", value:date.toLocaleString(DateTime.TIME_SIMPLE)},
+            { name: "Subject", value: sub[0]},
+            { name:"Teacher", value: sub[1]},
+            { name:"Period", value: String(per+1)},
             { name: "Day", value:date.weekdayLong}
         );
     msg.channel.send({embeds : [a]});
+    
+
     }
-    if(msg.content =="tb"){
-        msg.channel.send("https://cdn.discordapp.com/attachments/787302397902979073/904358371577167882/IMG-20211031-WA0004.jpg");
-    }
+
+
+    // if(msg.content =="tb"){
+    //     msg.channel.send("https://cdn.discordapp.com/attachments/787302397902979073/904358371577167882/IMG-20211031-WA0004.jpg");
+    // }
     if(msg.content.toLowerCase() === "bye"){
         msg.reply('bye , But my master(isra) will be online most of the time');
     }
@@ -327,6 +232,88 @@ bot.on("messageDelete", del =>{
     }
 }
 
+function period(time){
+    const ti=[28800,34200,36600,39600,42600,45600];
+    if(time>=ti[0] && time<=ti[1])
+    return 0;
+    if(time>=ti[1] && time<=ti[2])
+    return 1;
+    if(time>=ti[2] && time<=ti[3])
+    return 2;
+    if(time>=ti[3] && time<=ti[4])
+    return 3;
+    if(time>=ti[4] && time<=ti[5])
+    return 4;
+    if(time>=ti[5])
+    return 5;
+}
+
+function subject(period){
+    const sub1 = ["English","Maths","Chemistry","Computer","Physics","Class over"];
+    const sub2 = ["Maths","Physics","Computer","English","Chemistry","Class over"];
+    const sub3 = ["Computer","Maths","Chemistry","Physics","English","Class over"];
+    const sub4 = ["Chemistry","English","Maths","Physics","Computer","Class over"];
+    const sub5 = ["Maths","Chemistry","Computer","English","Physics","Class over"];
+
+    const teach1=[];
+    const teach2=[];
+    const teach3=[];
+    const teach4=[];
+    const teach5=[];
+
+    const week = DateTime.now().weekday;
+    let arr=[];
+    switch(week){
+     case 1:{
+        arr[0]=sub1[period];
+        arr[1]="Not yet!";
+        return arr;
+        break;
+     }
+     case 2:{
+        arr[0]=sub2[period];
+        arr[1]="Not yet!";
+        return arr;
+        break;
+     }
+     case 3:{
+        arr[0]=sub3[period];
+        arr[1]="Not yet!";
+        return arr;
+        break;
+     }
+     case 4:{
+        arr[0]=sub4[period];
+        arr[1]="Not yet!";
+        return arr;
+        break;
+     }
+     case 5:{
+        arr[0]=sub5[period];
+        arr[1]="Not yet!";
+        return arr;
+        break;
+     }
+     case 6:{
+         arr[0]="Saturday no class ";
+         arr[1]="LoL no";
+         return arr;
+         break;
+     }
+     case 7:{
+        arr[0]="Sunday no class ";
+        arr[1]="LoL no";
+        return arr;
+        break;
+     }
+     default:{
+         arr[0]="Error fetching timetale";
+         arr[1]="Error fetching timetale";
+         return arr;
+         break;
+     }
+    }
+}
 
 
 bot.login(process.env.token);
