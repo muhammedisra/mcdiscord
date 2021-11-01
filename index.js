@@ -23,7 +23,7 @@ bot.on('messageCreate', async msg=>{
         msg.reply('HELLO FRIEND');
     }
     
-if(msg.content.toLowerCase() == "timetable"){
+if(msg.content.toLowerCase().startsWith("timetable")){
 
 
     const date = DateTime.now();
