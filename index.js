@@ -54,6 +54,9 @@ if(msg.content.toLowerCase().startsWith("timetable")){
 
     if(msg.content.toLowerCase().startsWith("animeinfo")){
         try {
+            const rate = await valo("https://api.trace.moe/me");
+            bot.channels.cache.get("906900512455147530").send(String(rate.quotaUsed));
+            bot.channels.cache.get("906900512455147530").send(String(rate.id));
             if(msg.attachments.size == 0)
            msg.channel.send("No image entered");
            else{
