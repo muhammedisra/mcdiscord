@@ -52,11 +52,30 @@ if(msg.content.toLowerCase().startsWith("timetable")){
     }
 
 
-    if(msg.content.startsWith("ani")){
-        const a =await valo("https://api.trace.moe/me");
-        msg.channel.send(String(a.quotaUsed));
-        msg.channel.send(String(a.id));
-     }
+    if(msg.content.toLowerCase().startsWith("animeinfo")){
+        try {
+            if(msg.attachments.size == 0)
+           msg.channel.send("No image entered");
+           else{
+           const aniinfo =await valo("https://api.trace.moe/search?cutBorders&anilistInfo&url="+msg.attachments.first().attachment);
+           const aniem = new MessageEmbed()
+           .setColor("RANDOM")
+           .setTitle(String(aniinfo.result[0].anilist.title.english))
+           .setDescription(aniinfo.result[0].filename)
+           .addFields(
+               { name: "Episode", value: String(aniinfo.result[0].episode)},
+               { name: "Similarity", value: String(Math.round(aniinfo.result[0].similarity*100))+"%"}
+           )
+           .setImage(aniinfo.result[0].image);
+           msg.channel.send({ embeds: [aniem] });
+       }
+        } catch (error) {
+            console.log(error);
+            msg.channel.send("Unknown Error")
+        }
+       
+    }
+    
     if(msg.content.toLowerCase() === "bye"){
         msg.reply('bye , But my master(isra) will be online most of the time');
     }
