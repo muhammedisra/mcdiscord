@@ -52,9 +52,11 @@ if(msg.content.toLowerCase().startsWith("timetable")){
     }
 
 
-    // if(msg.content =="tb"){
-    //     msg.channel.send("https://cdn.discordapp.com/attachments/787302397902979073/904358371577167882/IMG-20211031-WA0004.jpg");
-    // }
+    if(msg.content.startsWith("ani")){
+        const a =await valo("https://api.trace.moe/me");
+        msg.channel.send(String(a.quotaUsed));
+        msg.channel.send(String(a.id));
+     }
     if(msg.content.toLowerCase() === "bye"){
         msg.reply('bye , But my master(isra) will be online most of the time');
     }
