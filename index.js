@@ -279,42 +279,42 @@ function subject(period){
     const sub4 = ["Chemistry","English","Maths","Physics","Computer","Class over"];
     const sub5 = ["Maths","Chemistry","Computer","English","Physics","Class over"];
 
-    const teach1=[];
-    const teach2=[];
-    const teach3=[];
-    const teach4=[];
-    const teach5=[];
+    const teach1=["Lakshmi","Sherly","Dhanya","Akshara","Cherian","Enjoy"];
+    const teach2=["Bini","Gayathri","Akshara","Imma","Sruthi","Enjoy"];
+    const teach3=["Akshara","Sherly","Dhanya","Cherian","Lakshmi","Enjoy"];
+    const teach4=["Sruthi","Imma","Bini","Gayathri","Akshara","Enjoy"];
+    const teach5=["Sherly","Dhanya","Akshara","Lakshmi","Cherian","Enjoy"];
 
     const week = DateTime.now().weekday;
     let arr=[];
     switch(week){
      case 1:{
         arr[0]=sub1[period];
-        arr[1]="Not yet!";
+        arr[1]=teach1[period];
         return arr;
         break;
      }
      case 2:{
         arr[0]=sub2[period];
-        arr[1]="Not yet!";
+        arr[1]=teach2[period];
         return arr;
         break;
      }
      case 3:{
         arr[0]=sub3[period];
-        arr[1]="Not yet!";
+        arr[1]=teach3[period];
         return arr;
         break;
      }
      case 4:{
         arr[0]=sub4[period];
-        arr[1]="Not yet!";
+        arr[1]=teach4[period];
         return arr;
         break;
      }
      case 5:{
         arr[0]=sub5[period];
-        arr[1]="Not yet!";
+        arr[1]=teach5[period];
         return arr;
         break;
      }
