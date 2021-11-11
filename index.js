@@ -13,19 +13,13 @@ bot.on('ready', () =>{
  })
 
 bot.on('messageCreate', async msg=>{
-    if(msg.content.toLowerCase().includes("!john cringe")){
-        const johny = ['https://cdn.discordapp.com/attachments/811949916887711775/814860063499223080/magik.png', 'https://cdn.discordapp.com/attachments/720477094714540122/854565024906739722/Screenshot_414.png', 'https://cdn.discordapp.com/attachments/720477094714540122/854565565162848266/Screenshot_416.png'];
-        var a = Math.floor(Math.random()*3);
-        msg.channel.send({files: [johny[a]]});
-        //console.log(a)
-    }
+    
+
     if(msg.content.toUpperCase() === "HELLO"){
         msg.reply('HELLO FRIEND');
     }
     
-if(msg.content.toLowerCase().startsWith("timetable")){
-
-
+    if(msg.content.toLowerCase().startsWith("timetable")){
     const date = DateTime.now();
     const sec = (date.hour*60*60)+(date.minute*60);
     let peri = msg.content.substring(10);
@@ -126,8 +120,10 @@ if(msg.content.toLowerCase().startsWith("timetable")){
          .setThumbnail(user.displayAvatarURL({ dynamic: true }));
          msg.channel.send({ embeds : [embed]});
          
-         }
- msg.guild.emojis.cache.forEach(em =>{
+    }
+
+
+    msg.guild.emojis.cache.forEach(em =>{
         if(msg.content.includes(em.name))
             msg.react(em.id);
     })
@@ -162,23 +158,22 @@ if(msg.content.toLowerCase().startsWith("timetable")){
     }
 
 
-if(msg.content.toLowerCase().startsWith("bulkdelete")){
-    var mm = msg.content.split(" ");
-    if (!(msg.author.id == "711077815784570952" || msg.author.id == "671012726192996352" || msg.author.id == "724668146614665359"))
-    {
-        msg.channel.send("Sorry you do not have permission for this action");
-    }
-    else if(mm[1]>100)
-    {
-        msg.channel.send("Argument must be less than 100");
-    }
-     else{
-        //console.log(mm);
+    if(msg.content.toLowerCase().startsWith("bulkdelete")){
+        var mm = msg.content.split(" ");
+        if (!(msg.author.id == "711077815784570952" || msg.author.id == "671012726192996352" || msg.author.id == "724668146614665359"))
+        {
+            msg.channel.send("Sorry you do not have permission for this action");
+        }
+        else if(mm[1]>100)
+        {
+            msg.channel.send("Argument must be less than 100");
+        }
+        else{
         if(!Number(mm[1]))
             msg.channel.send("Invalid Argument");
         else
-           msg.channel.bulkDelete(mm[1]);
-     }
+            msg.channel.bulkDelete(mm[1]);
+         }
     }
     if(msg.content.toLowerCase().startsWith("vs")){
         let user = msg.content.substring(3);
