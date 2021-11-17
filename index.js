@@ -73,9 +73,7 @@ bot.on('messageCreate', async msg=>{
        
     }
     
-    if(msg.content.toLowerCase() === "bye"){
-        msg.reply('bye , But my master(isra) will be online most of the time');
-    }
+    
     
     if(msg.content === "Who is your master bot"){
         msg.reply('Isra is my master');
@@ -215,10 +213,11 @@ bot.on('messageCreate', async msg=>{
  })
 
 bot.on("messageDelete", del =>{
-    if(del.channel.id == "787302397902979073" && !del.author.bot)
-    bot.channels.cache.get("851053934986395721").send(del.content+"\n Author "+del.author.username);
-    if(del.attachments.size != 0)
-    bot.channels.cache.get("851053934986395721").send(del.attachments.first().url);
+    if(del.channel.id == "787302397902979073" && !del.author.bot){
+        bot.channels.cache.get("851053934986395721").send(del.content+"\n Author "+del.author.username);
+        if(del.attachments.size != 0)
+            bot.channels.cache.get("851053934986395721").send(del.attachments.first().url);
+    }
   })
 
   bot.on("guildMemberUpdate", (om , nm ) =>{
