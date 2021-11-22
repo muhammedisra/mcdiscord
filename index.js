@@ -83,6 +83,7 @@ bot.on('messageCreate', async msg=>{
       })
        collector.on("end",() => {
         row.components.forEach(e=> e.setDisabled());
+        if(msg.editable)
         msg.edit({components:[row]})
        })
     })
