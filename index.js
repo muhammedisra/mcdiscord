@@ -28,21 +28,64 @@ bot.on('messageCreate', async msg=>{
     per = Number(peri)-1;
     else
     per = period(sec);
-    const sub = subject(per);
-    let quote = await valo("https://api.quotable.io/random");
-        msg.channel.send(quote.content+"\nAuthor: "+quote.author);
-        var a = new MessageEmbed()
-        .setColor("RANDOM")
-        .setTitle("TimeTable")
-        .addFields(
-            { name: "Subject", value: sub[0]},
-            { name:"Teacher", value: sub[1]},
-            { name:"Period", value: String(per+1)},
-            { name: "Day", value:date.weekdayLong}
-        );
-    msg.channel.send({embeds : [a]});
+    a = tbem(per)
+    const row = new MessageActionRow()
+		.addComponents(
+        new MessageButton()
+            .setCustomId('perprev')
+            .setEmoji(":arrowleft:912351000898203658")
+		    .setStyle('PRIMARY'),
+        new MessageButton()
+			.setCustomId('pernext')
+            .setEmoji(":arrowright:912350125349826570")
+			.setStyle('PRIMARY'),
+			);
+    if(per == 0){
+      row.components[0].setDisabled();
+    }
+    if(per == 4){
+      row.components[1].setDisabled();
+    }
+    if(per>4){
+      row.components.forEach(e=> e.setDisabled());
+    }
+    msg.channel.send({ embeds: [a], components: [row] })
+    .then(msg =>{
+      const filter = i => i.customId === 'perprev' || i.customId == "pernext";
+      const collector = msg.channel.createMessageComponentCollector({filter, time: 30000});
+      collector.on("collect", async i =>{
+        if(i.customId == 'perprev'){
+          if(per!=0){
+          per--;
+          row.components[1].setDisabled(false);
+          const e = tbem(per);
+          if(per == 0){
+            row.components[0].setDisabled();
+            i.update({components:[row], embeds:[e]});
+          }
+          else i.update({embeds:[e], components:[row]})
+          }
+        }
+        if(i.customId == 'pernext'){
+          if(per!=4){
+          per++;
+          row.components[0].setDisabled(false);
+          const e = tbem(per);
+          if(per == 4){
+            row.components[1].setDisabled();
+            i.update({components:[row], embeds:[e]});
+          }
+          else i.update({embeds:[e], components:[row]})
+          }
+        }
+      })
+       collector.on("end",() => {
+        row.components.forEach(e=> e.setDisabled());
+        msg.edit({components:[row]})
+       })
+    })
     
-
+        
     }
 
 
@@ -265,6 +308,20 @@ function period(time){
     if(time>=ti[5])
     return 5;
 }
+
+function tbem(period){
+    sub = subject(period);
+    return new MessageEmbed()
+        .setColor("RANDOM")
+        .setTitle("TimeTable")
+        .addFields(
+          { name: "Subject", value: sub[0] },
+          { name: "Teacher", value: sub[1] },
+          { name: "Period", value: String(period + 1) },
+          { name: "Day", value: DateTime.now().weekdayLong }
+        );
+  }
+  
 
 function subject(period){
     const sub1 = ["English","Maths","Chemistry","Computer","Physics","Class over"];
