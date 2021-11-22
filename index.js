@@ -28,6 +28,8 @@ bot.on('messageCreate', async msg=>{
     per = Number(peri)-1;
     else
     per = period(sec);
+    const quote = await valo("https://api.quotable.io/random");
+    msg.channel.send(quote.content + "\nAuthor: " + quote.author);
     a = tbem(per)
     const row = new MessageActionRow()
 		.addComponents(
