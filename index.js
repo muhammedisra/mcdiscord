@@ -54,7 +54,7 @@ bot.on('messageCreate', async msg=>{
     msg.channel.send({ embeds: [a], components: [row] })
     .then(msg =>{
       const filter = i => i.customId === 'perprev' || i.customId == "pernext";
-      const collector = msg.channel.createMessageComponentCollector({filter, time: 30000});
+      const collector = msg.createMessageComponentCollector({filter, time: 30000});
       collector.on("collect", async i =>{
         if(i.customId == 'perprev'){
           if(per!=0){
