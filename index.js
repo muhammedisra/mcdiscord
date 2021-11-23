@@ -308,7 +308,7 @@ function period(time){
     return 3;
     if(time>=ti[4] && time<=ti[5])
     return 4;
-    if(time>=ti[5])
+    if(time>=ti[5] || time<=ti[0])
     return 5;
 }
 
