@@ -327,17 +327,17 @@ function tbem(period){
   
 
 function subject(period){
-    const sub1 = ["English","Maths","Chemistry","Computer","Physics","Class over"];
-    const sub2 = ["Maths","Physics","Computer","English","Chemistry","Class over"];
-    const sub3 = ["Computer","Maths","Chemistry","Physics","English","Class over"];
-    const sub4 = ["Chemistry","English","Maths","Physics","Computer","Class over"];
-    const sub5 = ["Maths","Chemistry","Computer","English","Physics","Class over"];
-
-    const teach1=["Lakshmi","Sherly","Dhanya","Akshara","Cherian","Enjoy"];
-    const teach2=["Bini","Gayathri","Akshara","Imma","Sruthi","Enjoy"];
-    const teach3=["Akshara","Sherly","Dhanya","Cherian","Lakshmi","Enjoy"];
-    const teach4=["Sruthi","Imma","Bini","Gayathri","Akshara","Enjoy"];
-    const teach5=["Sherly","Dhanya","Akshara","Lakshmi","Cherian","Enjoy"];
+    const sub1 = ["English","Maths/Biology/Economics","Chemistry/Commerce","Computer/Maths/PE","Physics/Accountancy","Class over"];
+    const sub2 = ["Maths/Biology/Accountancy","Physics/Commerce","Computer/Maths/PE","English","Chemistry/Economics","Class over"];
+    const sub3 = ["Computer/Maths/PE","Maths/Biology/Accountancy","Chemistry/Economics","Physics/Commerce","English","Class over"];
+    const sub4 = ["Chemistry/Economics","English","Maths/Biology/Accountancy","Physics/Commerce","Computer/Maths/PE","Class over"];
+    const sub5 = ["Maths/Biology/Commerce","Chemistry/Economics","Computer/Maths/PE","English","Physics/Accountancy","Class over"];
+  
+    const teach1 = ["Lakshmi", "Sherly/Jit/Lilu", "Dhanya/Nirmala", "Akshara/Sherly/Evelin", "Cherian/Novella", "Enjoy"];
+    const teach2 = ["Bini/Jyothi/Novella", "Gayathri/Nirmala", "Akshara/Bini/Evelin", "Imma", "Sruthi/Lilu", "Enjoy"];
+    const teach3 = ["Akshara/Sherly/Evelin", "Sherly/Jit/Novella", "Dhanya/Lilu", "Cherian/Nirmala", "Lakshmi", "Enjoy"];
+    const teach4 = ["Sruthi/Lilu", "Imma", "Bini/Jyothi/Novella", "Gayathri/Nirmala", "Akshara/Bini/Evelin", "Enjoy"];
+    const teach5 = ["Sherly/Jit/Nirmala", "Dhanya/Lilu", "Akshara/Sherly/Evelin", "Lakshmi", "Cherian/Novella", "Enjoy"];
 
     const week = DateTime.now().weekday;
     let arr=[];
