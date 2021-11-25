@@ -91,6 +91,14 @@ bot.on('messageCreate', async msg=>{
         
     }
 
+    if(msg.content.toLowerCase().startsWith("encrypt")){
+        const sp = msg.content.split(" ");
+        const en = crypto.createHash('sha256').update(sp[1]).digest('hex');
+        msg.channel.send(en);
+        
+    }  
+
+
 
     if(msg.content.toLowerCase().startsWith("animeinfo")){
         try {
