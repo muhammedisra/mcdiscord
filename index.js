@@ -2,6 +2,7 @@ const { Client, Intents, MessageActionRow, MessageButton  } = require('discord.j
 const bot = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_EMOJIS_AND_STICKERS,Intents.FLAGS.GUILD_MEMBERS,Intents.FLAGS.GUILD_MESSAGE_REACTIONS] });
 const { MessageEmbed } = require('discord.js');
 const axios = require("axios");
+const crypto = require("crypto");
 const { DateTime } = require("luxon");
 const { Settings } = require("luxon");
 Settings.defaultZoneName = "Asia/Kolkata"
