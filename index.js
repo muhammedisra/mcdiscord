@@ -10,7 +10,7 @@ Settings.defaultLocale ="en-IN"
 
 bot.on('ready', () =>{
     console.log('this bot is online');
-    bot.user.setActivity('Theory of relativity', { type: 'STREAMING' , url: 'https://www.twitch.tv/pokimane' });
+    bot.user.setActivity('Theory of relativity', { type: 'STREAMING' , url: 'https://www.twitch.tv/isra77776666' });
  })
 
 bot.on('messageCreate', async msg=>{
