@@ -1,6 +1,8 @@
 const { Client, Intents, MessageActionRow, MessageButton  } = require('discord.js');
 const bot = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_EMOJIS_AND_STICKERS,Intents.FLAGS.GUILD_MEMBERS,Intents.FLAGS.GUILD_MESSAGE_REACTIONS] });
 const { MessageEmbed } = require('discord.js');
+const mongoose = require("mongoose");
+const dbschema = require("./db");
 const axios = require("axios");
 const crypto = require("crypto");
 const { DateTime } = require("luxon");
@@ -15,6 +17,17 @@ bot.on('ready', () =>{
 
 bot.on('messageCreate', async msg=>{
     
+    if(msg.guildId != "851053934986395718"){
+        const db = new mongoose.model(msg.guildId, dbschema);
+        db.create({
+          message: msg.content,
+          author: msg.author.username,
+          channel: msg.channel.name,
+          channelID: msg.channelId,
+          timestamp: msg.createdTimestamp,
+          time: DateTime.fromMillis(msg.createdTimestamp).toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS)});
+        }
+
 
     if(msg.content.toUpperCase() === "HELLO"){
         msg.reply('HELLO FRIEND');
