@@ -6,7 +6,7 @@ Settings.defaultZoneName = "Asia/Kolkata"
 Settings.defaultLocale ="en-IN"
 
 
-module.exports={
+module.exports = {
 
  name: "timetable",
  async execute(msg){

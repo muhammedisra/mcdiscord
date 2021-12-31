@@ -20,7 +20,7 @@ for(const file of command_files){
 module.exports = bot =>{
     bot.on('messageCreate', async msg=>{
 
-        const args = msg.content.split(/ +/);
+        const args = msg.content.toLowerCase().split(/ +/);
         const co = command.get(args[0]);
         if(co)
         co.execute(msg,bot);
