@@ -2,6 +2,7 @@ const { MessageEmbed } = require('discord.js');
 const { valo } = require("../api.js");
 
 module.exports = {
+    name: "animeinfo",
     async execute(msg,bot){
         try {
             const rate = await valo("https://api.trace.moe/me");

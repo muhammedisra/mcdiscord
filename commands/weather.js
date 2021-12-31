@@ -5,6 +5,7 @@ const { Settings } = require("luxon");
 Settings.defaultZoneName = "Asia/Kolkata";
 Settings.defaultLocale = "en-IN";
 module.exports = {
+    name: "weather",
     async execute(msg){
         let a = await valo("https://api.openweathermap.org/data/2.5/weather?q=aluva,india&units=metric&appid=2edf00afb0dcf94bf49a976279cd8a19");
         var abd = new MessageEmbed()

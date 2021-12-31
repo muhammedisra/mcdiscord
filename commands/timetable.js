@@ -8,7 +8,7 @@ Settings.defaultLocale ="en-IN"
 
 module.exports={
 
-  
+ name: "timetable",
  async execute(msg){
     const date = DateTime.now();
     const sec = (date.hour*60*60)+(date.minute*60);

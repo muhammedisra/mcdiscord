@@ -2,6 +2,7 @@ const { MessageEmbed } = require('discord.js');
 const { valo } = require("../api.js");
 
 module.exports = {
+    name: "vs",
     async execute(msg){
         let user = msg.content.substring(3);
         var ind = user.indexOf('#');

@@ -1,5 +1,6 @@
 const { MessageEmbed } = require('discord.js');
 module.exports = {
+      name: "info",
       execute(msg){
         msg.react("🆗");
          let no = msg.mentions.users.size;
