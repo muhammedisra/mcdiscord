@@ -47,8 +47,7 @@ module.exports = bot =>{
             msg.reply('Isra is my master');
         }
         if (msg.content.toLowerCase() === "random") { // checks if the message says "?random"
-            const number = Math.random()*10000; // generates a random number
-            msg.channel.send(number.toString().substring(0,4)); // sends a message to the channel with the number
+            msg.channel.send(String(Math.floor(Math.random()*10000))); // sends a message to the channel with the number
         }
         if(msg.content.toLowerCase() === "time"){
             let time = DateTime.now();
