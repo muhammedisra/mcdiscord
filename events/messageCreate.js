@@ -49,6 +49,13 @@ module.exports = bot =>{
         if (msg.content.toLowerCase() === "random") { // checks if the message says "?random"
             msg.channel.send(String(Math.floor(Math.random()*10000))); // sends a message to the channel with the number
         }
+        if(msg.content.toLowerCase() == "toss"){
+            const no = Math.floor(Math.random()*2);
+            if(no == 1)
+            msg.channel.send("Heads");
+            if(no == 0)
+            msg.channel.send("Tail");
+        }
         if(msg.content.toLowerCase() === "time"){
             let time = DateTime.now();
             msg.channel.send(time.toLocaleString(DateTime.TIME_WITH_SHORT_OFFSET));
