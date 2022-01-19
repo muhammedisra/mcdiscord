@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 module.exports = bot =>{
   
   bot.on("voiceStateUpdate", (o,n)=>{
-    const db = new mongoose.model(`vc${o.guild.id}`,vcsch);
+  const db = new mongoose.model(`vc${o.guild.id}`,vcsch);
   let data = await db.findOne({userid: o.member.id});
   
   if(!data){
