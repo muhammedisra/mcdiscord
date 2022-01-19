@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const fs = require('fs');
 const crypto = require("crypto");
 const ms = require("ms");
+const ps = require('pretty-ms');
 const { DateTime } = require("luxon");
 const { Settings } = require("luxon");
 Settings.defaultZoneName = "Asia/Kolkata";
@@ -45,9 +46,9 @@ module.exports = bot =>{
             const db = new mongoose.model(`vc${msg.guildId}`,vcsch);
             let data = await db.findOne({userid: idu});
             if(!data)
-            msg.channel.send("This user havent joined voice")
+            msg.channel.send("This user havent joined voice");
             else
-            msg.channel.send(ms(data.time))
+            msg.channel.send(ps(data.time));
         }
         if(msg.content.toUpperCase() === "HELLO"){
             msg.reply('HELLO FRIEND');
