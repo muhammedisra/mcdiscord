@@ -8,7 +8,7 @@ module.exports = bot =>{
   bot.on("voiceStateUpdate", async (o,n)=>{
   const db = new mongoose.model(`vc${o.guild.id}`,vcsch);
   let data = await db.findOne({userid: o.member.id});
-  console.log(o)
+  
   if(!data){
     data = await db.create({userid:o.member.id})
   }
