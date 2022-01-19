@@ -7,7 +7,7 @@ module.exports = bot=>{
   let data = await db.findOne({userid: o.member.id});
   
   if(!data){
-    data = await db.create({userid:o.member.id})
+    data = await db.create({userid:o.member.id}, vcsch);
   }
   if(!o.channelId){
     await db.updateOne({userid: String(o.member.id)}, {timestarted: DateTime.now().toMillis()});
