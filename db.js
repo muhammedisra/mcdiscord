@@ -11,7 +11,7 @@ mongoose.connect(DBS, {
 
 
 
-const dbschema = new mongoose.Schema({
+exports.dbschema = new mongoose.Schema({
     message: String,
     author: String,
     channel: String,
@@ -20,5 +20,15 @@ const dbschema = new mongoose.Schema({
     time: String
 });
 
+exports.vcsch = new mongoose.Schema({
+  userid: String,
+  time:{
+    default: 0,
+    type: Number
+  },
+  timestarted:{
+    default: 0,
+    type: Number
+  }
+});
 
-module.exports = dbschema;

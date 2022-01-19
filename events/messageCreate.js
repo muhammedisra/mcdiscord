@@ -3,11 +3,12 @@ const bot = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MES
 const mongoose = require("mongoose");
 const fs = require('fs');
 const crypto = require("crypto");
+const ms = require("ms");
 const { DateTime } = require("luxon");
 const { Settings } = require("luxon");
 Settings.defaultZoneName = "Asia/Kolkata";
 Settings.defaultLocale ="en-IN";
-const dbschema = require("./../db");
+const {dbschema, vcsch} = require("./../db");
 const { valo } = require("./../api");
 
 const command = new Collection();
@@ -34,6 +35,19 @@ module.exports = bot =>{
               channelID: msg.channelId,
               timestamp: msg.createdTimestamp,
               time: DateTime.fromMillis(msg.createdTimestamp).toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS)});
+        }
+        if(msg.content.toLowerCase().startsWith("vctime")){
+            let idu
+            if(msg.mentions.users.first())
+             idu = msg.mentions.users.first().id;
+            else
+             idu = msg.author.id;
+            const db = new mongoose.model(`vc${msg.guildId}`,vcsch);
+            let data = await db.findOne({userid: idu});
+            if(!data)
+            msg.channel.send("This user havent joined voice")
+            else
+            msg.channel.send(ms(data.time))
         }
         if(msg.content.toUpperCase() === "HELLO"){
             msg.reply('HELLO FRIEND');
