@@ -5,12 +5,12 @@ const mongoose = require("mongoose");
 
 module.exports = bot =>{
   
-  bot.on("voiceStateUpdate", async (o,n)=>{
-  const db = new mongoose.model(`vc${o.guild.id}`,vcsch);
+  bot.on("voiceStateUpdate", (o,n)=>{
+    const db = new mongoose.model(`vc${o.guild.id}`,vcsch);
   let data = await db.findOne({userid: o.member.id});
-  console.log("juefhu");
+  
   if(!data){
-    data = await db.create({userid:o.member.id}, vcsch);
+    data = await db.create({userid:o.member.id})
   }
   if(!o.channelId){
     await db.updateOne({userid: String(o.member.id)}, {timestarted: DateTime.now().toMillis()});
@@ -19,5 +19,5 @@ module.exports = bot =>{
     if(data.timestarted < DateTime.now().toMillis() && data.timestarted != 0)
     await db.updateOne({userid:o.member.id}, {timestarted: 0, time: data.time + (DateTime.now().toMillis() - data.timestarted)});
   }
-})
+  })
 }
