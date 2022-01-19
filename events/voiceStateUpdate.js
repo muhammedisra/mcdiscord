@@ -18,6 +18,5 @@ module.exports = bot =>{
     if(data.timestarted < DateTime.now().toMillis() && data.timestarted != 0)
     await db.updateOne({userid:o.member.id}, {timestarted: 0, time: data.time + (DateTime.now().toMillis() - data.timestarted)});
   }
-  
 })
 }
