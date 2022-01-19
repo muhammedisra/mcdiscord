@@ -1,4 +1,4 @@
-const { Client, Intents, Collection} = require('discord.js');
+const { Client, Intents, Collection, MessageEmbed} = require('discord.js');
 const bot = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_EMOJIS_AND_STICKERS,Intents.FLAGS.GUILD_MEMBERS,Intents.FLAGS.GUILD_MESSAGE_REACTIONS] });
 const mongoose = require("mongoose");
 const fs = require('fs');
@@ -50,6 +50,18 @@ module.exports = bot =>{
             else
             msg.channel.send(ps(data.time));
         }
+        if(msg.content.toLowerCase().startsWith("vclb")){
+            const db = new mongoose.model(`vc${msg.guildId}`,vcsch);
+            const sort = await db.find().sort("-time");
+            const lbem = new MessageEmbed();
+            let a = "Voice chat Leaderboard \n \n" ;
+            for(let i=0;i<sort.length;i++){
+              a = a+ `${i+1}.   **${(await msg.guild.members.fetch(sort[i].userid)).user.username}**   - ${ms(sort[i].time)} \n`
+            }
+            lbem.setDescription(a);
+            lbem.setColor("RANDOM");
+            msg.channel.send({ embeds: [lbem] });
+          }
         if(msg.content.toUpperCase() === "HELLO"){
             msg.reply('HELLO FRIEND');
         }
