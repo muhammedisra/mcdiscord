@@ -1,14 +1,14 @@
 const { vcsch } = require("./../db.js");
 const { DateTime } = require("luxon");
 const mongoose = require("mongoose");
-console.log("iof");
+
 
 module.exports = bot =>{
 
  bot.on("voiceStateUpdate", async (o,n)=>{
   const db = new mongoose.model(`vc${o.guild.id}`,vcsch);
   let data = await db.findOne({userid: o.member.id});
-  
+  console.log("juefhu");
   if(!data){
     data = await db.create({userid:o.member.id}, vcsch);
   }
