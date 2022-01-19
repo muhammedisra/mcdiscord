@@ -1,8 +1,10 @@
 const {vcsch} = require("./../db.js");
 const { DateTime } = require("luxon");
 const mongoose = require("mongoose");
+
 module.exports = bot=>{
    bot.on("voiceStateUpdate", async (o,n)=>{
+     console.log("VC Change ");
   const db = new mongoose.model(`vc${o.guild.id}`,vcsch);
   let data = await db.findOne({userid: o.member.id});
   
