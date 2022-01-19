@@ -1,6 +1,7 @@
 const { vcsch } = require("./../db.js");
 const { DateTime } = require("luxon");
 const mongoose = require("mongoose");
+console.log("iof");
 
 module.exports = bot =>{
 
