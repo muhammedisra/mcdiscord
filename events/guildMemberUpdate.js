@@ -10,7 +10,7 @@ module.exports = bot=>{
           var newname = nm.user.username;
           else
           var newname = nm.nickname;
-          bot.channels.cache.get("787302397902979073").send("Username of "+nm.user.toString()+" has been changed from "+oldname+" to "+newname);
+          // bot.channels.cache.get("787302397902979073").send("Username of "+nm.user.toString()+" has been changed from "+oldname+" to "+newname);
         }
       })
 }
