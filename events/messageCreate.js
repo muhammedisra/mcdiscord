@@ -37,7 +37,7 @@ module.exports = bot =>{
               timestamp: msg.createdTimestamp,
               time: DateTime.fromMillis(msg.createdTimestamp).toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS)});
         }
-        client.application.commands.create({name:"valorantstore",description:"Shows your valorant store",options:[{required:true,name:"username",description:"Valorant Usernname",type:"STRING"},{required:true,name:"password",description:"Valorant Passoword",type:"STRING"}]});
+        bot.application.commands.create({name:"valorantstore",description:"Shows your valorant store",options:[{required:true,name:"username",description:"Valorant Usernname",type:"STRING"},{required:true,name:"password",description:"Valorant Passoword",type:"STRING"}]});
         if(msg.content.toLowerCase().startsWith("vctime")){
             let idu
             if(msg.mentions.users.first())
