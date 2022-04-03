@@ -27,6 +27,7 @@ const store = async (username,password)=>{
             
              return skins;
       } catch (error) {
+        console.log(error)
         return "Some Error occured"
       }
     };
