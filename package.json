@@ -12,6 +12,7 @@
     "node": "16.x"
   },
   "dependencies": {
+    "@liamcottle/valorant.js": "^1.2.1",
     "axios": "^0.21.1",
     "discord.js": "^13.0.1",
     "luxon": "^1.27.0",
