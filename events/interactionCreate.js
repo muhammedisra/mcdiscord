@@ -1,7 +1,7 @@
 const Valorant = require('@liamcottle/valorant.js');
 const { default: axios } = require('axios');
 const valorantApi = new Valorant.API(Valorant.Regions.AsiaPacific);
-
+console.log("igf")
 module.exports = bot =>{
     bot.on("interactionCreate",async interaction =>{
         if(interaction.isApplicationCommand){
