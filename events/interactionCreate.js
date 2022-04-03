@@ -1,10 +1,10 @@
 const Valorant = require('@liamcottle/valorant.js');
 const { default: axios } = require('axios');
 const valorantApi = new Valorant.API(Valorant.Regions.AsiaPacific);
-console.log("igf")
+
 module.exports = bot =>{
     bot.on("interactionCreate",async interaction =>{
-        if(interaction.isApplicationCommand){
+        if(interaction.isCommand){
           if(interaction.commandName == 'valorantstore'){
           await interaction.deferReply();
           let sk = await store(interaction.options._hoistedOptions[0].value,interaction.options._hoistedOptions[1].value);
