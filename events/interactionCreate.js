@@ -20,6 +20,7 @@ module.exports = bot =>{
 
 const store = async (username,password)=>{
     let skins = "";
+    let pic = [];
       try {
             await valorantApi.authorize(username, password);
             const response = await valorantApi.getPlayerStoreFront(valorantApi.user_id);
