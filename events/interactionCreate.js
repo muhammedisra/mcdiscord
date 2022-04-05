@@ -28,7 +28,7 @@ const store = async (username,password)=>{
             // console.log(response.data.SkinsPanelLayout.SingleItemOffers[0]);
              for(let skin of response.data.SkinsPanelLayout.SingleItemOffers){
               let skinss = await valo("https://valorant-api.com/v1/weapons/skinlevels/"+skin);
-              skins = skins + skinss.data.displayName+ "\n";
+              skins = skins + skinss.data.displayName+ "    ";
               pic[i]=skinss.data.displayIcon;
               i++
             //  console.log(skins);
