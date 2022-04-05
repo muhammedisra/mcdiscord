@@ -20,6 +20,7 @@ module.exports = bot =>{
 
 const store = async (username,password)=>{
     let skins = "";
+    let i = 0;
     let pic = [];
       try {
             await valorantApi.authorize(username, password);
