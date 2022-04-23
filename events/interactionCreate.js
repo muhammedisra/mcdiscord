@@ -76,18 +76,18 @@ let canvas = await createCollage(options)
 
 
 
-    const job = cron.job("27 14 * * *",function(){
+    const job = cron.job("34 14 * * *",function(){
       dmstore(process.env.username,process.env.password);
     },null,true,"Asia/Kolkata");
     console.log(job.nextDates(5).map((date) => date.toString()))
     
-    
+    const users = bot.users;
     
      async function dmstore(username, password){
        try{
       const a = await store(username,password);
-      bot.users.fetch("711077815784570952").then(e=>e.send({content:a[0],files:[a[1]]}));
-      bot.users.fetch("671012726192996352").then(e=>e.send({content:a[0],files:[a[1]]}));
+      users.fetch("711077815784570952").then(e=>e.send({content:a[0],files:[a[1]]}));
+      users.fetch("671012726192996352").then(e=>e.send({content:a[0],files:[a[1]]}));
        }catch(err){
          console.log(err)
          console.log("Some Error Occured")
