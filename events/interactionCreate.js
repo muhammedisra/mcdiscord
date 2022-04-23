@@ -76,7 +76,7 @@ let canvas = await createCollage(options)
 
 
 
-    const job = cron.job("5 14 * * *",function(){
+    const job = cron.job("6 14 * * *",function(){
       dmstore(process.env.username,process.env.password);
     },null,true,"Asia/Kolkata");
     console.log(job.nextDates(5).map((date) => date.toString()))
@@ -89,6 +89,7 @@ let canvas = await createCollage(options)
       bot.users.fetch("711077815784570952").then(e=>e.send({content:a[0],files:[a[1]]}));
       bot.users.fetch("671012726192996352").then(e=>e.send({content:a[0],files:[a[1]]}));
        }catch(err){
+         console.log(err)
          console.log("Some Error Occured")
        }
     }
