@@ -76,7 +76,7 @@ let canvas = await createCollage(options)
 
 
 
-    const job = cron.job("12 18 * * *",function(){
+    const job = cron.job("22 14 * * *",function(){
       dmstore(process.env.username,process.env.password);
     },null,true,"Asia/Kolkata");
     console.log(job.nextDates(5).map((date) => date.toString()))
