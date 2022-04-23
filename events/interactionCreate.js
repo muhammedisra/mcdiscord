@@ -1,5 +1,6 @@
 const Valorant = require('@liamcottle/valorant.js');
 const axios = require('axios');
+const cron = require('cron');
 const createCollage = require("@settlin/collage");
 const valorantApi = new Valorant.API(Valorant.Regions.AsiaPacific);
 
@@ -72,3 +73,22 @@ let canvas = await createCollage(options)
         return format;
       } catch (error) {}
     };
+
+
+
+    const job = cron.job("0 6 * * *",function(){
+      dmstore(process.env.username,process.env.password);
+    },null,true,"Asia/Kolkata");
+    console.log(job.nextDates(5).map((date) => date.toString()))
+    
+    
+    
+     async function dmstore(username, password){
+       try{
+      const a = await store(username,password);
+      client.users.fetch("711077815784570952").then(e=>e.send({content:a[0],files:[a[1]]}));
+      client.users.fetch("671012726192996352").then(e=>e.send({content:a[0],files:[a[1]]}));
+       }catch(err){
+         console.log("Some Error occured")
+       }
+    }
