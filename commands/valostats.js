@@ -23,7 +23,7 @@ module.exports = {
             .setTitle(user)
             .setThumbnail(b.data.card.small)
             .addFields(
-                {name: "Rank", value: a.data.currenttierpatched},
+                {name: "Rank", value: String(a.data.currenttierpatched)},
                 {name: "Rank Tier", value: String(a.data.ranking_in_tier)+"/100"},
                 {name: "Last game rank change", value: String(a.data.mmr_change_to_last_game)}
             );
