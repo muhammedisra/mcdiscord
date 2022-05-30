@@ -9,7 +9,9 @@ module.exports = {
         var tag = user.substring(ind+1)
         var name = user.substring(0,ind);
         var url1 = 'https://api.henrikdev.xyz/valorant/v1/mmr/ap/'+name+'/'+tag;
+        let url2 = 'https://api.henrikdev.xyz/valorant/v1/account/'+name+'/'+tag;
         let a = await valo(url1);
+        let b = await valo(url2);
         //console.log(a)
          if( a == undefined)
          msg.channel.send("No user found");
@@ -19,7 +21,7 @@ module.exports = {
             const valembed = new MessageEmbed()
             .setColor("DARK_RED")
             .setTitle(user)
-            .setThumbnail("https://i.imgur.com/O3oribA.png")
+            .setThumbnail(b.data.card.small)
             .addFields(
                 {name: "Rank", value: a.data.currenttierpatched},
                 {name: "Rank Tier", value: String(a.data.ranking_in_tier)+"/100"},
