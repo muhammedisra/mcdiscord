@@ -9,7 +9,7 @@
   "author": "Juicy",
   "license": "ISC",
   "engines": {
-    "node": "17.x"
+    "node": "18.x"
   },
   "dependencies": {
     "@liamcottle/valorant.js": "^1.2.1",
