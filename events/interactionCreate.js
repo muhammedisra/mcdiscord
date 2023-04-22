@@ -76,7 +76,7 @@ let canvas = await createCollage(options)
 
 
 
-    const job = cron.job("0 6 * * *",function(){
+    /* const job = cron.job("0 6 * * *",function(){
       dmstore(process.env.username,process.env.password);
     },null,true,"Asia/Kolkata");
     
@@ -91,5 +91,5 @@ let canvas = await createCollage(options)
        }catch(err){
          console.log(err)
          console.log("Some Error Occured")
-       }
-    }}
+       }}*/
+    }
